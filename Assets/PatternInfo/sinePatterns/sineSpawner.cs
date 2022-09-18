@@ -6,9 +6,10 @@ public class sineSpawner : MonoBehaviour
 {
     [Header("spawnResource")]
     public GameObject bulletPrefab;
+     public GameObject bulletPoolSine;
     public float lifeTimeM;
 
-
+   
 
     [Header("Spawn Variables")]
     public int numberOfBulletColumns;
@@ -89,7 +90,7 @@ public class sineSpawner : MonoBehaviour
         float increment = (maxRotation - minRotation) / numberOfBulletColumns;
         for (int i = 0; i < numberOfBulletColumns; ++i)
         {
-            GameObject bullet1 = simpleBulletPool.SharedInstance.GetPooledObject();
+            GameObject bullet1 = bulletPoolSine.GetComponent<simpleBulletPool>().GetPooledObject();
             if(bullet1 != null)
             {
 
