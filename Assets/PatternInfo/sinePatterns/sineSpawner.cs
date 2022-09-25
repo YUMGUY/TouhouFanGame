@@ -96,7 +96,7 @@ public class sineSpawner : MonoBehaviour
 
                 bullet1.transform.position = transform.position;
                 
-                bullet1.transform.eulerAngles = new Vector3(0, 0, angle);
+                bullet1.transform.eulerAngles = new Vector3(0, 0, angle);             // currently the bullets being spawned are not parented to the parent's rotation
                 // these resets are very important, lifetime and distance travelled
                 bullet1.GetComponent<sineWaveInfo>().lifeTime = lifeTimeM;
                 bullet1.GetComponent<sineWaveInfo>().distanceTravelled = 0;

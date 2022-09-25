@@ -1,0 +1,3005 @@
+fileFormatVersion: 2
+guid: 0d29c6ccc133a7047907315437546e7e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 516
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7843e4f779f7b43bc5b2b0b0c61775
+      internalID: -1915744736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_1
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 547
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25265ed4ce185247a0691b13d0466b1
+      internalID: -598131398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 555
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265c05e5df1581b41953035176faa06c
+      internalID: -97756251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 551
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ff3bc36390e3f4ab1d6ce7daae8bea
+      internalID: 1806810712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_4
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 323
+        width: 62
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5adbb1b8e833aef48a46fec9fe7e25f7
+      internalID: -33198752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 323
+        width: 29
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfd71b2b0cc740438ed3125cb9a27c6
+      internalID: 412403760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_6
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 515
+        width: 16
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27faf5bfef0a0e2439fcac032e2b09cd
+      internalID: 506261417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 547
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee97a5c34e06c34cb944096fa933814
+      internalID: -406606434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_8
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 323
+        width: 128
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2e339346ed0184f95e9741f261b7f3
+      internalID: -1102935732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_9
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 566
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a60ae72ff1b9d4fae646c40f4d92e4
+      internalID: -684837228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_10
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 323
+        width: 47
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e930d70cd2f682f4ea926e6d72ab4229
+      internalID: 1183042474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_11
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 323
+        width: 14
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3788b5155aac0424580c4dbfbfdfca25
+      internalID: 780837368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 308
+        width: 251
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82efb6e7fe8075647a927d4db5eccd5e
+      internalID: 896028343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_13
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 550
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8301ea3f61ad9141912248bb5539f67
+      internalID: 1725593032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_14
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 515
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15289956bfd8efc45ab5c2a977c1ab5a
+      internalID: 1148820216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_15
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 523
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b9a2fa0733fcd4f97a4c1238b27f6c
+      internalID: 763552555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_16
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 519
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d972478deafb0f04384047138f68899e
+      internalID: 995195696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_17
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 515
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950064d235b75c649b8e15c314e70abd
+      internalID: -852658566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_18
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 535
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2584fb2953381304192bc7e1e7a23465
+      internalID: 1075555812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_19
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 519
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbf8d810853e5d4081b04d77dba95c2
+      internalID: -522476575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 452
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a81a5aced0e2d0489728566689febdb
+      internalID: -726370195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_21
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 483
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ddfef6232c5e342aef1a685aaa9303
+      internalID: -1897573716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_22
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 492
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bedb5bf6dfe384419320e96751f04c6
+      internalID: -515915535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_23
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 487
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8099ad1c8b7fb884e9b5bbb3e0caa065
+      internalID: 867117240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_24
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 501
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6599605d0aa66c4dafa5c6ed8010b53
+      internalID: -1905152334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_25
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 483
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404df827da2bd6d4ca842b2684fb57ca
+      internalID: 836922653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_26
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 503
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2605dda4a0328e546877aa4c594be7d4
+      internalID: -1406936661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_27
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 485
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7227e3954ac98724d9896c0609588fc1
+      internalID: 1272941158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_28
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 487
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1147c3a42cecfbb419e471a72628b837
+      internalID: -949909128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_29
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 451
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629274ffbc2976248b6a2e93eb045a12
+      internalID: 1857836091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_30
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 459
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14299688578192c4388188130636dc64
+      internalID: 901659135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_31
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 455
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639078bf9f1bc5b4db10c26a90bb2e45
+      internalID: -275459993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_32
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 469
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452a41b81a6a2844899634e1d325f654
+      internalID: -1655957288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_33
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 451
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc520d9bbc2044f9d15cd15db43c80
+      internalID: -2088110142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_34
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 470
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593debb5f2c4fec43adeb6615cb49713
+      internalID: 992133764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_35
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 453
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82f35918e5af4643aa99f06e7f95ef2
+      internalID: -107397150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_36
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 455
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3396e62a27a88b145a317d8a26043bb7
+      internalID: -1774111914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_37
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 388
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059020c9c2c1a114f9c5d6c0b5d81bbe
+      internalID: 1905350828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_38
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 419
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3af8af44f868f4994ae504612e73b8
+      internalID: 431895843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_39
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 427
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e2de06fafb10341b7c397c5bdeeddc
+      internalID: 961584503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_40
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 423
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f626a54c01693c47bd9549dc3537ef4
+      internalID: 1381090393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_41
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 437
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ee2ebf36a7ceb4d8d7ec7459f60ac3
+      internalID: -17027279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_42
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 419
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 846a78c95f21d894cafacd07dce1d66c
+      internalID: -1348801060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_43
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 439
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9b9a957b3a7b146ac56ff35c4df826
+      internalID: 872900815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_44
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 421
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcb6c3b3cc6c184a9fa85175afa57e9
+      internalID: 1310465173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_45
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 423
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15da6c85959d41a488edf5e1ae5dd868
+      internalID: 1372027302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_46
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 387
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4d5e43c7438c84ab9b519de4300ca1
+      internalID: 1712873955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_47
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 396
+        width: 31
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f191e854f0b8cda42b5902180f8f94c4
+      internalID: -1127779146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_48
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 391
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0735b592cb56b704887f8fea2fd8afb8
+      internalID: 467921654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_49
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 405
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92947928fcca786428de0100539f3758
+      internalID: -1532799003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_50
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 387
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9509c73a06801b541a162f403629406a
+      internalID: -2112165533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_51
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 407
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad80d4ec08b203948814767080280615
+      internalID: 1251198578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_52
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 389
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588ca696d59affa49a71dd75a54ef0dc
+      internalID: 848618203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_53
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 391
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa046c6887020c4f841b56e31c04032
+      internalID: 1392720375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_54
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 324
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d976380a0e43cb4a9967466ff3f73cb
+      internalID: 1550357615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_55
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 355
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09dba6b22a4ac741ad5a49ee590de9b
+      internalID: 600691734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_56
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 363
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd7ba1babcb5894db31c1c6a4b1cee8
+      internalID: 1628395125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_57
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 359
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70258f5a84e1f7a43a77bc3b0a62bac8
+      internalID: 1003842276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_58
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 373
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cec0e3d5a6d904ca5b71d450377ad0
+      internalID: 1348771098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_59
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 355
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a2fd2c36870d549af46408b0cfc1ce
+      internalID: 764838210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_60
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 375
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb575915d976b354093425f7c158fba5
+      internalID: -201664110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_61
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 357
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18372fd8cbe8d3f458f706fd095248ff
+      internalID: 1772745992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_62
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 359
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ec53232a821ac4bb7ac0303ee45c72
+      internalID: 1985654169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_63
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 323
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02efa268623e58409ca2ed54c457d8b
+      internalID: -1482595058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_64
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 331
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b4b8a6eaa229c4c9c3b4f7c4f499a2
+      internalID: -1331159813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_65
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 327
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374eed53606c3674ca72d3cb2baecb01
+      internalID: -1385777329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_66
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 323
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0529cd06ad28ebf48bb6913c567cc251
+      internalID: 1298249431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_67
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 343
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676c848463d338449962b9310811c4e7
+      internalID: -34669827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_68
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 327
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a88ae05fa38de54e906cbfd2c6b2bed
+      internalID: 2076841022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_69
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 246
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998aea336adac35469c0bde6017b85aa
+      internalID: -1144286259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_70
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 276
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15132ecdd30e2d4e890299cafab3eca
+      internalID: 1652735891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_71
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 277
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67dc9306c8dff8a4cb95617e621f81cc
+      internalID: -1236566824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_72
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 294
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3333a7b015711e84587ffaa2d6fac8f7
+      internalID: -960661406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_73
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 278
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248c016b87a3c514ea8b130226a64f58
+      internalID: -1343810202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_74
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 278
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac440cef18ae2f44b17dd4894ddd4fc
+      internalID: -1961405525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_75
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 245
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcec6e82b2be3e54fb954380511b2558
+      internalID: 1342457012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_76
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 300
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87054f9d7e4cc3b4c885bb95d6f7272e
+      internalID: -1028509922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_77
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 292
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa9b50e284e14945959c973124502fa
+      internalID: 1304316325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_78
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 260
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48168ee3148a9964aab4c434f6499093
+      internalID: 1654886512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_79
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 225
+        width: 128
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd70e5073a8744a4cb00cb89fc22df48
+      internalID: 1926596825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_80
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 278
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45aed2eabaafa2f4d8f25e1f981eef8e
+      internalID: -1657613345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_81
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 244
+        width: 61
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eefe20a71c29c458f5902a1828f0e0
+      internalID: -2104622590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_82
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 23
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3745965a71ee90f498783d17764b7288
+      internalID: 1008932818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_83
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c566c477db062a4685b09ec81620b3d
+      internalID: 1681631200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_84
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 196
+        width: 79
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2fbd8d510f80f4389d8844b5d883b3
+      internalID: 374822931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_85
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 246
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3dd9e909389a84489ee85875907d6b
+      internalID: 1378977455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_86
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 244
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28b895dd7a690f4f9e201fbd92b1a4b
+      internalID: -24903464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_87
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 182
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5145e6b41c12b4fbd4ebeb9f74e7c4
+      internalID: 1468777480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_88
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 212
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210ced45553aa424185400f07d487c62
+      internalID: 1672696285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_89
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 213
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b63c21b87f9c0479e969c121721f86
+      internalID: 103753002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_90
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 181
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ad67d541f3c3849974fc73343dae32
+      internalID: -479780207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_91
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 179
+        width: 62
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2191a413b5c086244bfeb58f0cf9917b
+      internalID: -677659787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_92
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 228
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827195d71673f3a4a9d8c2f4d0e70485
+      internalID: 1656776078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_93
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 214
+        width: 128
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c7d93ac18fbaa4a8ac5537bb4ddaac
+      internalID: 799683193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_94
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 212
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d1dd396f8006c40bcfe897e907e811
+      internalID: 1990112007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_95
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 197
+        width: 128
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eddef0b7d585184e95b8eaf48269798
+      internalID: 1343814526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_96
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 180
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aaf0ccc1084c94a90c8753a4ec8bed
+      internalID: -1022113962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_97
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 181
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d222a0913daf5743a293a16c84319db
+      internalID: -1927843930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_98
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 182
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241673ad949aa2b46a0495630e677e1a
+      internalID: -1232145923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_99
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 182
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb20ad5291adf5e45acda5d1077d53c1
+      internalID: -2024151765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_100
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 196
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c95f5d6f9f91ca2479a28d2e4885097d
+      internalID: -498654518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_101
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 180
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4388b1e19c5006b48a6c0ad468c6fbdc
+      internalID: -480394965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_102
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 183
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742ae2cb07d31ad459edbe16c5433b61
+      internalID: 819802478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_103
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 183
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138174ba07d5b0948988414b34c8b419
+      internalID: 1557880766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_104
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 183
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62d28da21619d3459e08f55633f894d
+      internalID: 1878530903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_105
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 180
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0816e7ebfc590a04e8c7ea8dff9b9f0b
+      internalID: 2089820630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_106
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 118
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95123ad7a2e1ee54d9798350eb58881f
+      internalID: 1313636568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_107
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 148
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661c96003145b9749a291a455372a4e5
+      internalID: -1464281531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_108
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 133
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facab5852a13df24a98a15d1500be908
+      internalID: 2059538030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_109
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 52
+        width: 142
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff13165d2f1546459d3685b51f33bec
+      internalID: 789720294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_110
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 117
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18dde17b03aba1498d8ec8aa75b824c
+      internalID: -1921953690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_111
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 164
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a7c9874aa18bc40889e1f25872fb21
+      internalID: -945084441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_112
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 116
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f2d7e4e51305d4ebc13c1a4e493f0d
+      internalID: 364326282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_113
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 148
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecc801322c4ee04ebc797eb31b5bcc8
+      internalID: -1828581823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_114
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 116
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1966e95c4782f7940baa74c1001f64fb
+      internalID: 1783772385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_115
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 132
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b4c652d4bdfca46b4dc4d157af9e4e
+      internalID: -341043501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_116
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 116
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ff40d261bbf774cbcea6f037f80a8b
+      internalID: 770765364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_117
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 69
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f925ea9037e264794019d19475966b
+      internalID: -32765420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_118
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 54
+        width: 61
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7d3b35422ee2448a7f8ddd79fca6dd
+      internalID: 1438459693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_119
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 84
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f16c91ac2ab52d4aad420dc537f907a
+      internalID: 389609787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_120
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 91
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fe43166215cc3418fb12a7c6443865
+      internalID: -379733802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_121
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 53
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7232f3d1154fb7048977d8bd6d15f465
+      internalID: 1892241060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_122
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 100
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960603d796eaea944be41aef1cd82460
+      internalID: 1076444697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_123
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 84
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a6394a073df894ab806a2ab0de3a93
+      internalID: -801801066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_124
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 52
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21993bd904c79c945b63be859dd4934c
+      internalID: -1192728206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_125
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 68
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf9bed609a0f024ca36c04fc134de65
+      internalID: -485530638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_126
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 55
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12616f033b5ee65469a1052cd564bc39
+      internalID: 1233174541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_127
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 52
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb99de372fdb68d43985206f41c3b227
+      internalID: -1253022894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_128
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 37
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1299fe88913115f4fb3d23c20fe08a99
+      internalID: 1242770223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_129
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 48
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc3376bcf886304b917fcd0533f78e7
+      internalID: 224590747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_ComputerTouhou Chireiden Subterranean Animism_2_130
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 32
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475a451b4a7318c46a2e581562c4f267
+      internalID: -1353072504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_15: 763552555
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_70: 1652735891
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_40: 1381090393
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_128: 1242770223
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_9: -684837228
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_23: 867117240
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_35: -107397150
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_79: 1926596825
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_107: -1464281531
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_12: 896028343
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_18: 1075555812
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_91: -677659787
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_88: 1672696285
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_36: -1774111914
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_49: -1532799003
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_27: 1272941158
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_77: 1304316325
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_0: -1915744736
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_118: 1438459693
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_41: -17027279
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_124: -1192728206
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_21: -1897573716
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_94: 1990112007
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_83: 1681631200
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_19: -522476575
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_69: -1144286259
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_34: 992133764
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_113: -1828581823
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_67: -34669827
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_116: 770765364
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_87: 1468777480
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_123: -801801066
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_115: -341043501
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_46: 1712873955
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_97: -1927843930
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_54: 1550357615
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_57: 1003842276
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_39: 961584503
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_20: -726370195
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_85: 1378977455
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_90: -479780207
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_26: -1406936661
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_127: -1253022894
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_95: 1343814526
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_84: 374822931
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_25: 836922653
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_33: -2088110142
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_43: 872900815
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_129: 224590747
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_4: -33198752
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_51: 1251198578
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_63: -1482595058
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_112: 364326282
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_31: -275459993
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_7: -406606434
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_92: 1656776078
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_22: -515915535
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_24: -1905152334
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_30: 901659135
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_81: -2104622590
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_114: 1783772385
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_45: 1372027302
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_8: -1102935732
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_76: -1028509922
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_80: -1657613345
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_120: -379733802
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_99: -2024151765
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_121: 1892241060
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_89: 103753002
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_5: 412403760
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_13: 1725593032
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_102: 819802478
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_47: -1127779146
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_37: 1905350828
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_56: 1628395125
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_122: 1076444697
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_59: 764838210
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_103: 1557880766
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_117: -32765420
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_111: -945084441
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_38: 431895843
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_130: -1353072504
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_14: 1148820216
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_100: -498654518
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_1: -598131398
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_6: 506261417
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_78: 1654886512
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_3: 1806810712
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_126: 1233174541
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_71: -1236566824
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_2: -97756251
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_42: -1348801060
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_44: 1310465173
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_32: -1655957288
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_101: -480394965
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_104: 1878530903
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_109: 789720294
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_93: 799683193
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_68: 2076841022
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_96: -1022113962
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_106: 1313636568
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_29: 1857836091
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_58: 1348771098
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_11: 780837368
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_50: -2112165533
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_64: -1331159813
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_108: 2059538030
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_17: -852658566
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_73: -1343810202
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_74: -1961405525
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_16: 995195696
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_72: -960661406
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_10: 1183042474
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_62: 1985654169
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_110: -1921953690
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_86: -24903464
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_119: 389609787
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_65: -1385777329
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_61: 1772745992
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_55: 600691734
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_75: 1342457012
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_28: -949909128
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_66: 1298249431
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_52: 848618203
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_53: 1392720375
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_98: -1232145923
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_82: 1008932818
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_105: 2089820630
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_48: 467921654
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_60: -201664110
+      PC_ComputerTouhou Chireiden Subterranean Animism_2_125: -485530638
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -58,7 +58,7 @@ public class regularSpawnInfo : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.H))
             {
                 print("spawnHeart");
-                spawnHeart();
+                StartCoroutine(MaidsLove());
             }
         }
         
@@ -118,34 +118,75 @@ public class regularSpawnInfo : MonoBehaviour
     }
 
     // can make the heart a prefab as well
-    public void spawnHeart()
+   GameObject[] spawnHeart()
     {
+        GameObject[] heartCollection = new GameObject[numberOfCustomBullets];
         float t = 0;
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
             print("spawned heart bullets");
             GameObject heartBullet = bulletPoolR.GetComponent<simpleBulletPool>().GetPooledObject();
             t = (i * 2f * Mathf.PI)/numberOfCustomBullets;
-            float xPos = 4 * Mathf.Pow(Mathf.Sin(t), 3);
-            float yPos = .25f * (13 * Mathf.Cos(t) - 5 * Mathf.Cos(2 * t) - 2 * Mathf.Cos(3 * t) - Mathf.Cos(4 * t));
+            float xPos = .25f * Mathf.Pow(Mathf.Sin(t), 3);
+            float yPos = .5f * .03125f * (13 * Mathf.Cos(t) - 5 * Mathf.Cos(2 * t) - 2 * Mathf.Cos(3 * t) - Mathf.Cos(4 * t));
             if (heartBullet != null)
             {
-                heartBullet.transform.position = transform.position + new Vector3(xPos, yPos);
+                // reset variables
+                heartBullet.transform.rotation =this.transform.rotation; // parents rotation affects bullet's starting rotation
+                heartBullet.transform.position = transform.position + new Vector3( xPos,yPos);
 
                 heartBullet.GetComponent<regularCustomBehavior>().direction = new Vector2(xPos,yPos).normalized; // either make this dirSpawn or a new Vector
-                heartBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
+                heartBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed + new Vector2(xPos, yPos).magnitude; // works, forms shape constantly
 
                 heartBullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
-               
+
+                heartCollection[i] = heartBullet;
                 heartBullet.SetActive(true);
             }
            
         }
+
+        return heartCollection;
        
-        
-        
-        
+       
     }
 
     // set plans for preventing bad allocation of rotation = new everytime new pattern is chosen
+
+    public IEnumerator MaidsLove()
+    {
+        GameObject[] mBullets = new GameObject[numberOfCustomBullets];
+        mBullets = spawnHeart();
+
+        // wait 1 second before all heart bullets pause
+        yield return new WaitForSeconds(2f);
+
+        for(int i = 0; i < numberOfCustomBullets; ++i)
+        {
+            mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = 0;
+
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            Vector2 dir = player.position - mBullets[i].transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+          //  mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);                // will have to change angle with knive sprites, +90 if 1 = x, -90 if  1 = y vel
+          //  mBullets[i].GetComponent<regularCustomBehavior>().direction = Vector2.right;
+            // offset is needed if the sprite isn't pointed right
+                                                                                                   /*two different behaviors when direction is being controlled
+                                                                                                    * and when the angle is being controlled */
+            mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
+        }
+
+        // there are many ways for the heart bullets to behave towards the player, will ask for suggestions
+
+        // temporary, for now instead of using animation, just set speed back to original speed
+
+        for(int i = 0; i < numberOfCustomBullets; ++i)
+        {
+            yield return new WaitForSeconds(.1f);
+            mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
+        }
+
+        print("coroutine MaidsLove done");
+        yield return null;
+    }
 }
