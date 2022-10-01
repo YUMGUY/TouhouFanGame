@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.z
@@ -303,6 +303,7 @@ MonoBehaviour:
   rotationsR: []
   makeHeart: 1
   numberOfCustomBullets: 46
+  spawnReverse: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +612,7 @@ MonoBehaviour:
   rotationsR: []
   makeHeart: 1
   numberOfCustomBullets: 46
+  spawnReverse: 1
 --- !u!1001 &1246289040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -773,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.z
@@ -813,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Name
-      value: RegularBulletSpawner
+      value: Maids'Love Spawner 1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_IsActive

@@ -33,6 +33,7 @@ public class regularSpawnInfo : MonoBehaviour
     [Header("Custom Variables")]
     public bool makeHeart;
     public int numberOfCustomBullets;
+    public bool spawnReverse;
 
     void Start()
     {
@@ -120,11 +121,12 @@ public class regularSpawnInfo : MonoBehaviour
     // can make the heart a prefab as well
    GameObject[] spawnHeart()
     {
+        print("spawned heart bullets"); // for testing
         GameObject[] heartCollection = new GameObject[numberOfCustomBullets];
         float t = 0;
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
-            print("spawned heart bullets");
+            
             GameObject heartBullet = bulletPoolR.GetComponent<simpleBulletPool>().GetPooledObject();
             t = (i * 2f * Mathf.PI)/numberOfCustomBullets;
             float xPos = .25f * Mathf.Pow(Mathf.Sin(t), 3);
@@ -140,10 +142,21 @@ public class regularSpawnInfo : MonoBehaviour
 
                 heartBullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
 
+                // populate the Bullets being spawned array
                 heartCollection[i] = heartBullet;
                 heartBullet.SetActive(true);
+                
             }
            
+        }
+        if(spawnReverse)
+        {
+            for(int i = 0; i < heartCollection.Length/2; ++i)
+            {
+                GameObject temp = heartCollection[i];
+                heartCollection[i] = heartCollection[heartCollection.Length - i - 1];
+                heartCollection[heartCollection.Length - i - 1] = temp;
+            }
         }
 
         return heartCollection;
@@ -165,15 +178,15 @@ public class regularSpawnInfo : MonoBehaviour
         {
             mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = 0;
 
-            Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            Vector2 dir = player.position - mBullets[i].transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            //Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+            //Vector2 dir = player.position - mBullets[i].transform.position;              // this code tracks the player's position once
+            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
           //  mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);                // will have to change angle with knive sprites, +90 if 1 = x, -90 if  1 = y vel
           //  mBullets[i].GetComponent<regularCustomBehavior>().direction = Vector2.right;
             // offset is needed if the sprite isn't pointed right
                                                                                                    /*two different behaviors when direction is being controlled
                                                                                                     * and when the angle is being controlled */
-            mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
+            //mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
         }
 
         // there are many ways for the heart bullets to behave towards the player, will ask for suggestions
@@ -183,10 +196,19 @@ public class regularSpawnInfo : MonoBehaviour
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
             yield return new WaitForSeconds(.1f);
+            Transform player = GameObject.FindGameObjectWithTag("Player").transform; // continuosly tracks Reimu
+            Vector2 dir = player.position - mBullets[i].transform.position;
+            mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
             mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
         }
 
         print("coroutine MaidsLove done");
+        yield return null;
+    }
+
+    // surrounds the player with layers of knives with a noticeable gap
+    public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
+    {
         yield return null;
     }
 }
