@@ -5,18 +5,21 @@ using UnityEngine;
 public class regularSpawnInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-
     [Header("Spawn Resource")]
     public GameObject bulletR;
     public GameObject bulletPoolR;
 
-
     [Header("spawn variables")]
     public int numCol;
+    public int newNumCol; // this controls numCol since I don't want to make a new array constantly 
+
     public float spawnSpeed;
     public float lifeTimeR;
     public Vector2 dirSpawn;
     public float spawnRateR;
+    public bool willSpawnAuto;
+
+
 
     [SerializeField]
     private float spawnRateTimerR;
@@ -31,21 +34,45 @@ public class regularSpawnInfo : MonoBehaviour
 
 
     [Header("Custom Variables")]
+    public GameObject Reimu;
     public bool makeHeart;
-    public int numberOfCustomBullets;
     public bool spawnReverse;
+    public bool accelBullets;
+    public int numberOfCustomBullets;
+    public AnimationCurve accelerationCurveR;
+    private Vector2 targetPosition;
+
+
+
+    // circumvent resizing array constantly by checking once, could do a void function that gets called within each attack pattern ********NOTE*************
 
     void Start()
     {
         rotationsR = new float[numCol];
+        
     }
-
     // Update is called once per frame
     void Update()
     {
+        // resize rotation array when needed
+        if (newNumCol != numCol)
+        {
+            Debug.Log("Changed rotations array size within if statement");
+            numCol = newNumCol;
+            rotationsR = new float[numCol];
+        }
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            newNumCol++;
+        }
+
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            StartCoroutine(SurroundTimeStop(0,0,.5f));
+        }
         // rn it'll spawn automatically
         spawnRateTimerR -= Time.deltaTime;
-        if(makeHeart == false)
+        if(willSpawnAuto == true)
         {
             if(spawnRateTimerR <= 0)
             {
@@ -64,7 +91,6 @@ public class regularSpawnInfo : MonoBehaviour
         }
         
     }
-
 
 
     public void spawnBullet()
@@ -88,16 +114,21 @@ public class regularSpawnInfo : MonoBehaviour
 
                 // manipulate values of regular bullet's attached script
                 rBullet.GetComponent<regularCustomBehavior>().direction = dirSpawn;
-                rBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
                 rBullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
 
+                if(accelBullets == true)
+                {
+                    rBullet.GetComponent<regularCustomBehavior>().willAccel = true;
+                    rBullet.GetComponent<regularCustomBehavior>().speedCurve = accelerationCurveR;
+                }
+                else { rBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed; }
+
                 rBullet.SetActive(true);
-
-
             }
         }
     }
 
+    // have to add a check for resizing the array
     public void DistributedRotationsR()
     {
         float angle = 0;
@@ -134,18 +165,18 @@ public class regularSpawnInfo : MonoBehaviour
             if (heartBullet != null)
             {
                 // reset variables
-                heartBullet.transform.rotation =this.transform.rotation; // parents rotation affects bullet's starting rotation
+                float angle = Mathf.Atan2(yPos, xPos) * Mathf.Rad2Deg;
+                heartBullet.transform.rotation = Quaternion.Euler(0, 0, angle); // parents rotation affects bullet's starting rotation
                 heartBullet.transform.position = transform.position + new Vector3( xPos,yPos);
 
-                heartBullet.GetComponent<regularCustomBehavior>().direction = new Vector2(xPos,yPos).normalized; // either make this dirSpawn or a new Vector
+                heartBullet.GetComponent<regularCustomBehavior>().direction = Vector2.right; // either make this dirSpawn or a new Vector
                 heartBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed + new Vector2(xPos, yPos).magnitude; // works, forms shape constantly
 
                 heartBullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
 
                 // populate the Bullets being spawned array
                 heartCollection[i] = heartBullet;
-                heartBullet.SetActive(true);
-                
+                heartBullet.SetActive(true);  
             }
            
         }
@@ -159,9 +190,7 @@ public class regularSpawnInfo : MonoBehaviour
             }
         }
 
-        return heartCollection;
-       
-       
+        return heartCollection; 
     }
 
     // set plans for preventing bad allocation of rotation = new everytime new pattern is chosen
@@ -171,34 +200,26 @@ public class regularSpawnInfo : MonoBehaviour
         GameObject[] mBullets = new GameObject[numberOfCustomBullets];
         mBullets = spawnHeart();
 
-        // wait 1 second before all heart bullets pause
+        // wait 2 seconds before all heart bullets pause
         yield return new WaitForSeconds(2f);
 
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
             mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = 0;
-
-            //Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-            //Vector2 dir = player.position - mBullets[i].transform.position;              // this code tracks the player's position once
-            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-          //  mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);                // will have to change angle with knive sprites, +90 if 1 = x, -90 if  1 = y vel
-          //  mBullets[i].GetComponent<regularCustomBehavior>().direction = Vector2.right;
-            // offset is needed if the sprite isn't pointed right
-                                                                                                   /*two different behaviors when direction is being controlled
-                                                                                                    * and when the angle is being controlled */
-            //mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
+            mBullets[i].GetComponent<regularCustomBehavior>().direction = Vector2.right;
         }
 
-        // there are many ways for the heart bullets to behave towards the player, will ask for suggestions
+        // there are many ways for the heart bullets to behave towards the player, will ask for suggestions, rn kinda looks pretty
 
-        // temporary, for now instead of using animation, just set speed back to original speed
-
+        // temporary, for now instead of using animation, just set speed back to original speed instantaneously instead of animationcurve for speed using bool for bullet
+        
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
-            yield return new WaitForSeconds(.1f);
-            Transform player = GameObject.FindGameObjectWithTag("Player").transform; // continuosly tracks Reimu
-            Vector2 dir = player.position - mBullets[i].transform.position;
-            mBullets[i].GetComponent<regularCustomBehavior>().direction = dir.normalized;
+            yield return new WaitForSeconds(.01f);
+            // continuosly tracks Reimu
+            Vector2 dir = Reimu.transform.position - mBullets[i].transform.position;              // this code tracks the player's position once
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);
             mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
         }
 
@@ -209,6 +230,63 @@ public class regularSpawnInfo : MonoBehaviour
     // surrounds the player with layers of knives with a noticeable gap
     public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
     {
+
+        Color orig = Reimu.GetComponent<SpriteRenderer>().color; // for debugging purposes
+
+
+
+        Reimu.GetComponent<playerMovement>().playerCanMove = false;
+        Reimu.GetComponent<SpriteRenderer>().color = Color.blue;
+        print("Sakuya used time stop");
+
+        GameObject[] encircleCollection = new GameObject[40]; // arbitrary number, can be changed to whatever as long as it is even, and the # of iterations match
+        for(int k = 0; k < 4; ++k)
+        {
+            for (int i = 0; i < 10; ++i)
+            {
+                GameObject bullet = Instantiate(bulletR);
+
+                // optimizable
+                float angle = (i * 2f * Mathf.PI) / 10;
+
+                float x = Mathf.Cos(angle + (k*gapOffset)) * (2 + (k*gapOffset)); // multiplied by radius
+                float y = Mathf.Sin(angle + (k * gapOffset)) * (2 + (k*gapOffset));
+
+                targetPosition = Reimu.transform.position + new Vector3(x, y);
+                bullet.transform.position = targetPosition;
+                bullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
+                bullet.GetComponent<regularCustomBehavior>().bSpeed = 0f;
+
+                // bullet.transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * angle);
+                // new way of rotating bullet towards the player, instead of setting velocity to -1
+                Vector2 dir = Reimu.transform.position - bullet.transform.position;
+                bullet.GetComponent<regularCustomBehavior>().direction = Vector2.right;
+                float angle2 = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                bullet.transform.rotation = Quaternion.Euler(0, 0, angle2);
+
+                encircleCollection[(k*10) + i] = bullet;
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+        
+        yield return new WaitForSeconds(1f);
+
+        print("Time has resumed");
+        Reimu.GetComponent<playerMovement>().playerCanMove = true;
+        Reimu.GetComponent<SpriteRenderer>().color = orig;
+
+        // unfreeze bullets layer by layer
+        for(int i = 0; i < 4; ++i)
+        {
+            for(int j = 0; j < 10; ++j)
+            {
+                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().bSpeed = 2.0f;
+            }
+
+            yield return new WaitForSeconds(.5f);
+        }
+
         yield return null;
     }
 }

@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class regularCustomBehavior : MonoBehaviour
 {
+    //************** This is a script for a bullet **********************//
+
     // Start is called before the first frame update
     public float bSpeed;
     public float blifeTime;
     public Vector2 direction;
+
+    [Header("Optional Acceleration")]
+    public AnimationCurve speedCurve;
+    public bool willAccel;
+    private float timeAcceleration;
+
+    [Header("Gravity Properties")]
+    public bool hasGravity;
+    public float gravityAccelModifer;
     void Start()
     {
         
@@ -32,6 +43,25 @@ public class regularCustomBehavior : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+
+        // implement falling
+
+
+        // implement acceleration
+        if(willAccel == true && speedCurve != null)
+        {
+            timeAcceleration += Time.deltaTime;
+            bSpeed = speedCurve.Evaluate(timeAcceleration);
+        }
+
+
+
         transform.Translate(bSpeed * direction * Time.deltaTime);
+    }
+
+
+    private void GravityAccleration()
+    {
+
     }
 }
