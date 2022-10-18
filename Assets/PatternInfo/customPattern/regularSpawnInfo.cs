@@ -173,6 +173,9 @@ public class regularSpawnInfo : MonoBehaviour
                 heartBullet.GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed + new Vector2(xPos, yPos).magnitude; // works, forms shape constantly
 
                 heartBullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
+                //reset acceleration variables
+                heartBullet.GetComponent<regularCustomBehavior>().timeAcceleration = 0f;
+                heartBullet.GetComponent<regularCustomBehavior>().willAccel = false;
 
                 // populate the Bullets being spawned array
                 heartCollection[i] = heartBullet;
@@ -220,10 +223,13 @@ public class regularSpawnInfo : MonoBehaviour
             Vector2 dir = Reimu.transform.position - mBullets[i].transform.position;              // this code tracks the player's position once
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);
-            mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = spawnSpeed;
+
+            // custom accelerate the bullets
+            mBullets[i].GetComponent<regularCustomBehavior>().willAccel = accelBullets;
+            mBullets[i].GetComponent<regularCustomBehavior>().speedCurve = accelerationCurveR;
+
         }
 
-        print("coroutine MaidsLove done");
         yield return null;
     }
 
@@ -281,7 +287,7 @@ public class regularSpawnInfo : MonoBehaviour
         {
             for(int j = 0; j < 10; ++j)
             {
-                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().bSpeed = 2.0f;
+                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().bSpeed = 2.0f; // make it accelerate later on
             }
 
             yield return new WaitForSeconds(.5f);

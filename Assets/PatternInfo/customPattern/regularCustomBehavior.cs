@@ -14,7 +14,7 @@ public class regularCustomBehavior : MonoBehaviour
     [Header("Optional Acceleration")]
     public AnimationCurve speedCurve;
     public bool willAccel;
-    private float timeAcceleration;
+    public float timeAcceleration;
 
     [Header("Gravity Properties")]
     public bool hasGravity;

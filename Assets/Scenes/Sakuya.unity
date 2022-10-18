@@ -364,8 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192bdfac62676740868ac18e11bba7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletR: {fileID: 8660086008319136251, guid: 32a03d217d4dcfa4f9aa938b9f86b7b4, type: 3}
-  bulletPoolR: {fileID: 1542282638}
+  bulletR: {fileID: 2056571745561751651, guid: f6a06ddc83865b242ac663567180066a, type: 3}
+  bulletPoolR: {fileID: 1930656051}
   numCol: 5
   newNumCol: 0
   spawnSpeed: 1
@@ -378,14 +378,32 @@ MonoBehaviour:
   minRotationR: 0
   maxRotationR: 90
   rotationsR: []
-  Reimu: {fileID: 0}
+  Reimu: {fileID: 419129741}
   makeHeart: 1
   spawnReverse: 0
-  accelBullets: 0
+  accelBullets: 1
   numberOfCustomBullets: 60
   accelerationCurveR:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2
+      value: 3
+      inSlope: 4.6204166
+      outSlope: 4.6204166
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.033584833
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -688,8 +706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9192bdfac62676740868ac18e11bba7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletR: {fileID: 8660086008319136251, guid: 32a03d217d4dcfa4f9aa938b9f86b7b4, type: 3}
-  bulletPoolR: {fileID: 1542282638}
+  bulletR: {fileID: 2056571745561751651, guid: f6a06ddc83865b242ac663567180066a, type: 3}
+  bulletPoolR: {fileID: 1930656051}
   numCol: 5
   newNumCol: 0
   spawnSpeed: 1
@@ -702,14 +720,32 @@ MonoBehaviour:
   minRotationR: 0
   maxRotationR: 90
   rotationsR: []
-  Reimu: {fileID: 0}
+  Reimu: {fileID: 419129741}
   makeHeart: 1
   spawnReverse: 1
-  accelBullets: 0
+  accelBullets: 1
   numberOfCustomBullets: 60
   accelerationCurveR:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2
+      value: 3
+      inSlope: 4.6204166
+      outSlope: 4.6204166
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.033584833
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -827,16 +863,16 @@ MonoBehaviour:
   lifeTimeR: 15
   dirSpawn: {x: 1, y: 0}
   spawnRateR: 1
-  willSpawnAuto: 1
+  willSpawnAuto: 0
   spawnRateTimerR: 0
-  randomAngles: 1
+  randomAngles: 0
   minRotationR: 0
   maxRotationR: 360
   rotationsR: []
   Reimu: {fileID: 419129741}
   makeHeart: 0
   spawnReverse: 0
-  accelBullets: 1
+  accelBullets: 0
   numberOfCustomBullets: 60
   accelerationCurveR:
     serializedVersion: 2
@@ -844,38 +880,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -3.3323903
-      outSlope: -3.3323903
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.3000849
-      value: 0
-      inSlope: -0.11571131
-      outSlope: -0.11571131
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.20546699
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.4983775
-      value: 0
-      inSlope: 0.99357677
-      outSlope: 0.99357677
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.26770052
-      outWeight: 0.04110615
-    - serializedVersion: 3
-      time: 2
-      value: 4
-      inSlope: 2.6637855
-      outSlope: 2.6637855
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -912,8 +930,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9efc871e1ed064c91b1a2e0a8d191f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners: []
+  Sakuya_: {fileID: 886750594}
+  spawners:
+  - {fileID: 805485755}
+  - {fileID: 518354382}
+  knifeTag: 
   sakuyaHp: 200
+  sakuyaController: {fileID: 886750598}
 --- !u!1001 &1246289040
 PrefabInstance:
   m_ObjectHideFlags: 0
