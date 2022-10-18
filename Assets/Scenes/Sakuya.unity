@@ -287,11 +287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Name
@@ -689,6 +689,156 @@ MonoBehaviour:
   objectToPool: {fileID: 8660086008319136251, guid: 4482082d9ac65134db133b6477966c2a, type: 3}
   amountToPool: 40
   poolwillGrow: 1
+--- !u!1001 &780342455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 886750595}
+    m_Modifications:
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.a
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.g
+      value: 0.12657726
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Name
+      value: Spit Roast Knives Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+--- !u!4 &780342456 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+  m_PrefabInstance: {fileID: 780342455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &780342457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+  m_PrefabInstance: {fileID: 780342455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &780342458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780342457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9192bdfac62676740868ac18e11bba7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletR: {fileID: 2056571745561751651, guid: f6a06ddc83865b242ac663567180066a, type: 3}
+  bulletPoolR: {fileID: 1930656051}
+  numCol: 5
+  newNumCol: 0
+  spawnSpeed: 1
+  lifeTimeR: 20
+  dirSpawn: {x: 1, y: 0}
+  spawnRateR: 0.3
+  willSpawnAuto: 0
+  spawnRateTimerR: 0
+  randomAngles: 0
+  minRotationR: 0
+  maxRotationR: 90
+  rotationsR: []
+  Reimu: {fileID: 419129741}
+  makeHeart: 0
+  spawnReverse: 0
+  accelBullets: 1
+  numberOfCustomBullets: 60
+  accelerationCurveR:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &805485755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
@@ -788,6 +938,8 @@ Transform:
   m_Children:
   - {fileID: 805485760}
   - {fileID: 518354385}
+  - {fileID: 780342456}
+  - {fileID: 1296110174}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -934,7 +1086,9 @@ MonoBehaviour:
   spawners:
   - {fileID: 805485755}
   - {fileID: 518354382}
-  knifeTag: 
+  pattern2Spawner: {fileID: 780342457}
+  pattern2Helper: {fileID: 0}
+  knifeTag: knife
   sakuyaHp: 200
   sakuyaController: {fileID: 886750598}
 --- !u!1001 &1246289040
@@ -1034,6 +1188,156 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67901e1e79020a44498ec1489afb3d44, type: 3}
+--- !u!1001 &1296110173
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 886750595}
+    m_Modifications:
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.a
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Color.r
+      value: 0.03184688
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_Name
+      value: Spit Roast Knives Rotator
+      objectReference: {fileID: 0}
+    - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+--- !u!4 &1296110174 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+  m_PrefabInstance: {fileID: 1296110173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1296110175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
+  m_PrefabInstance: {fileID: 1296110173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1296110176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296110175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9192bdfac62676740868ac18e11bba7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletR: {fileID: 8660086008319136251, guid: 32a03d217d4dcfa4f9aa938b9f86b7b4, type: 3}
+  bulletPoolR: {fileID: 1542282638}
+  numCol: 10
+  newNumCol: 0
+  spawnSpeed: 1
+  lifeTimeR: 15
+  dirSpawn: {x: 1, y: 0}
+  spawnRateR: 0.3
+  willSpawnAuto: 0
+  spawnRateTimerR: 0
+  randomAngles: 0
+  minRotationR: 0
+  maxRotationR: 360
+  rotationsR: []
+  Reimu: {fileID: 419129741}
+  makeHeart: 0
+  spawnReverse: 0
+  accelBullets: 1
+  numberOfCustomBullets: 60
+  accelerationCurveR:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1542282638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,11 +1481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279760, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1225,7 +1529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279761, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Name

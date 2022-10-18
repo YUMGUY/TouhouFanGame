@@ -66,10 +66,7 @@ public class regularSpawnInfo : MonoBehaviour
             newNumCol++;
         }
 
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(SurroundTimeStop(0,0,.5f));
-        }
+      
         // rn it'll spawn automatically
         spawnRateTimerR -= Time.deltaTime;
         if(willSpawnAuto == true)
@@ -213,8 +210,6 @@ public class regularSpawnInfo : MonoBehaviour
         }
 
         // there are many ways for the heart bullets to behave towards the player, will ask for suggestions, rn kinda looks pretty
-
-        // temporary, for now instead of using animation, just set speed back to original speed instantaneously instead of animationcurve for speed using bool for bullet
         
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
@@ -234,16 +229,21 @@ public class regularSpawnInfo : MonoBehaviour
     }
 
     // surrounds the player with layers of knives with a noticeable gap
+    // hasn't implemented pooling
+    // move over to sakuya stage
     public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
     {
 
         Color orig = Reimu.GetComponent<SpriteRenderer>().color; // for debugging purposes
 
-
-
         Reimu.GetComponent<playerMovement>().playerCanMove = false;
         Reimu.GetComponent<SpriteRenderer>().color = Color.blue;
         print("Sakuya used time stop");
+
+        /*
+         effects of time stop, make everything grey and all bullets stop
+         
+         */
 
         GameObject[] encircleCollection = new GameObject[40]; // arbitrary number, can be changed to whatever as long as it is even, and the # of iterations match
         for(int k = 0; k < 4; ++k)
@@ -262,8 +262,6 @@ public class regularSpawnInfo : MonoBehaviour
                 bullet.transform.position = targetPosition;
                 bullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
                 bullet.GetComponent<regularCustomBehavior>().bSpeed = 0f;
-
-                // bullet.transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * angle);
                 // new way of rotating bullet towards the player, instead of setting velocity to -1
                 Vector2 dir = Reimu.transform.position - bullet.transform.position;
                 bullet.GetComponent<regularCustomBehavior>().direction = Vector2.right;
@@ -273,7 +271,7 @@ public class regularSpawnInfo : MonoBehaviour
                 encircleCollection[(k*10) + i] = bullet;
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
         }
         
         yield return new WaitForSeconds(1f);
@@ -287,11 +285,13 @@ public class regularSpawnInfo : MonoBehaviour
         {
             for(int j = 0; j < 10; ++j)
             {
-                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().bSpeed = 2.0f; // make it accelerate later on
+                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().willAccel = true; // make it accelerate later on
+                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().speedCurve = accelerationCurveR;
             }
-
             yield return new WaitForSeconds(.5f);
         }
+
+
 
         yield return null;
     }

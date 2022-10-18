@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sineBullet1
   - bulletPool
+  - knife
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,8 @@ public class SakuyaStage : MonoBehaviour
     [Header("bullet spawners and Time Variables")]
     public GameObject Sakuya_;
     public GameObject[] spawners;
+    public GameObject pattern2Spawner;
+    public GameObject pattern2Helper;
     public string knifeTag;
 
     [Header("Sakuya Info")]
@@ -29,12 +31,40 @@ public class SakuyaStage : MonoBehaviour
         {
             MaidLovePattern();
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+           //StartCoroutine(pattern2Spawner.GetComponent<regularSpawnInfo>().SurroundTimeStop(0, 0, .1f));
+        }
     }
 
     // ////////////////////////////////////////////////////// FIRST PATTERN " COMPLIMENTS TO THE CHEF "  //////////////////
     public void MaidLovePattern()
     {
         sakuyaController.SetTrigger("heartPattern");
+    }
+
+    // control flow of the pattern
+    public void SetHeartBool(int number)
+    {
+        switch(number)
+        {
+            case 1:
+                sakuyaController.SetBool("heart1", false);
+                sakuyaController.SetBool("heart2", true);
+                sakuyaController.SetBool("heart3", false);
+                break;
+            case 2:
+                sakuyaController.SetBool("heart1", false);
+                sakuyaController.SetBool("heart2", false);
+                sakuyaController.SetBool("heart3", true);
+                break;
+            case 3:
+                sakuyaController.SetBool("heart1", true);
+                sakuyaController.SetBool("heart2", false);
+                sakuyaController.SetBool("heart3", false);
+                break;
+        }
     }
 
     public IEnumerator ChefsCompliment()
