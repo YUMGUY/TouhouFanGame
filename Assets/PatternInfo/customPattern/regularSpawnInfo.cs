@@ -142,7 +142,7 @@ public class regularSpawnInfo : MonoBehaviour
         
         for(int i = 0; i < numCol; ++i)
         {
-            rotationsR[i] = Random.Range(minRotationR, maxRotationR);
+            rotationsR[i] = Random.Range(minRotationR, maxRotationR);   
         }
     }
 
@@ -228,71 +228,5 @@ public class regularSpawnInfo : MonoBehaviour
         yield return null;
     }
 
-    // surrounds the player with layers of knives with a noticeable gap
-    // hasn't implemented pooling
-    // move over to sakuya stage
-    public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
-    {
-
-        Color orig = Reimu.GetComponent<SpriteRenderer>().color; // for debugging purposes
-
-        Reimu.GetComponent<playerMovement>().playerCanMove = false;
-        Reimu.GetComponent<SpriteRenderer>().color = Color.blue;
-        print("Sakuya used time stop");
-
-        /*
-         effects of time stop, make everything grey and all bullets stop
-         
-         */
-
-        GameObject[] encircleCollection = new GameObject[40]; // arbitrary number, can be changed to whatever as long as it is even, and the # of iterations match
-        for(int k = 0; k < 4; ++k)
-        {
-            for (int i = 0; i < 10; ++i)
-            {
-                GameObject bullet = Instantiate(bulletR);
-
-                // optimizable
-                float angle = (i * 2f * Mathf.PI) / 10;
-
-                float x = Mathf.Cos(angle + (k*gapOffset)) * (2 + (k*gapOffset)); // multiplied by radius
-                float y = Mathf.Sin(angle + (k * gapOffset)) * (2 + (k*gapOffset));
-
-                targetPosition = Reimu.transform.position + new Vector3(x, y);
-                bullet.transform.position = targetPosition;
-                bullet.GetComponent<regularCustomBehavior>().blifeTime = lifeTimeR;
-                bullet.GetComponent<regularCustomBehavior>().bSpeed = 0f;
-                // new way of rotating bullet towards the player, instead of setting velocity to -1
-                Vector2 dir = Reimu.transform.position - bullet.transform.position;
-                bullet.GetComponent<regularCustomBehavior>().direction = Vector2.right;
-                float angle2 = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                bullet.transform.rotation = Quaternion.Euler(0, 0, angle2);
-
-                encircleCollection[(k*10) + i] = bullet;
-            }
-
-            yield return new WaitForSeconds(.5f);
-        }
-        
-        yield return new WaitForSeconds(1f);
-
-        print("Time has resumed");
-        Reimu.GetComponent<playerMovement>().playerCanMove = true;
-        Reimu.GetComponent<SpriteRenderer>().color = orig;
-
-        // unfreeze bullets layer by layer
-        for(int i = 0; i < 4; ++i)
-        {
-            for(int j = 0; j < 10; ++j)
-            {
-                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().willAccel = true; // make it accelerate later on
-                encircleCollection[(i * 10) + j].GetComponent<regularCustomBehavior>().speedCurve = accelerationCurveR;
-            }
-            yield return new WaitForSeconds(.5f);
-        }
-
-
-
-        yield return null;
-    }
+    
 }

@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &291623225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291623226}
+  m_Layer: 0
+  m_Name: Pop the Champagne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &291623226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291623225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6575996, y: -1.3878692, z: -0.014228417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &419129741
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +830,7 @@ MonoBehaviour:
   bulletR: {fileID: 2056571745561751651, guid: f6a06ddc83865b242ac663567180066a, type: 3}
   bulletPoolR: {fileID: 1930656051}
   numCol: 5
-  newNumCol: 0
+  newNumCol: 5
   spawnSpeed: 1
   lifeTimeR: 20
   dirSpawn: {x: 1, y: 0}
@@ -1087,10 +1118,11 @@ MonoBehaviour:
   - {fileID: 805485755}
   - {fileID: 518354382}
   pattern2Spawner: {fileID: 780342457}
-  pattern2Helper: {fileID: 0}
+  pattern2Helper: {fileID: 1296110175}
   knifeTag: knife
   sakuyaHp: 200
   sakuyaController: {fileID: 886750598}
+  ReimuTarget: {fileID: 419129741}
 --- !u!1001 &1246289040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1297,15 +1329,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletR: {fileID: 8660086008319136251, guid: 32a03d217d4dcfa4f9aa938b9f86b7b4, type: 3}
   bulletPoolR: {fileID: 1542282638}
-  numCol: 10
-  newNumCol: 0
+  numCol: 15
+  newNumCol: 8
   spawnSpeed: 1
-  lifeTimeR: 15
+  lifeTimeR: 20
   dirSpawn: {x: 1, y: 0}
   spawnRateR: 0.3
   willSpawnAuto: 0
   spawnRateTimerR: 0
-  randomAngles: 0
+  randomAngles: 1
   minRotationR: 0
   maxRotationR: 360
   rotationsR: []
@@ -1320,17 +1352,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 4.5894303
+      outSlope: 4.5894303
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.025619129
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      value: 1.5
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
