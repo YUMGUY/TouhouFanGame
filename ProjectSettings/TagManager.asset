@@ -7,6 +7,7 @@ TagManager:
   - sineBullet1
   - bulletPool
   - knife
+  - hungerUI
   layers:
   - Default
   - TransparentFX
