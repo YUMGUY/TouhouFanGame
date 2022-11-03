@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
     public static GameManager instance;
     
     [Header("Handle Reimu Powers")]
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         hungerPointsDisplay.text = currentHungerPoints.ToString("D2") + "/" + maxHungerPoints.ToString("D2");
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -43,7 +44,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             ++currentHungerPoints;
-            
         }
         if(currentHungerPoints >= maxHungerPoints)
         {
@@ -54,13 +54,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /* hunger points system */
     private void IncreaseMaxHungerPoints()
     {
         maxHungerPoints += 50;
     }
-
     private void SetHungerDisplay()
     {
         hungerPointsDisplay.text = currentHungerPoints.ToString() + "/" + maxHungerPoints.ToString();
+    }
+    public void PowerUpReimu()
+    {
+
     }
 }
