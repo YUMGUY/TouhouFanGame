@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float timeScale;
     public int currentHungerPoints;
     public int maxHungerPoints;
+    public int livesStage;
 
     [Header("Display Scores/Points/Lives")]
     public TextMeshProUGUI hungerPointsDisplay;
@@ -63,8 +64,15 @@ public class GameManager : MonoBehaviour
     {
         hungerPointsDisplay.text = currentHungerPoints.ToString() + "/" + maxHungerPoints.ToString();
     }
+
+    /* lives and power system*/
     public void PowerUpReimu()
     {
 
+    }
+
+    public void DecreaseLife()
+    {
+        --livesStage;
     }
 }

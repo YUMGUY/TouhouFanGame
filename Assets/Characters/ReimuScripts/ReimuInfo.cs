@@ -24,6 +24,6 @@ public class ReimuInfo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        print("Reimu Collided");
     }
 }

@@ -61,10 +61,10 @@ public class regularSpawnInfo : MonoBehaviour
             numCol = newNumCol;
             rotationsR = new float[numCol];
         }
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            newNumCol++;
-        }
+        //if(Input.GetKeyDown(KeyCode.O))
+        //{
+        //    newNumCol++;
+        //}
 
       
         // rn it'll spawn automatically
