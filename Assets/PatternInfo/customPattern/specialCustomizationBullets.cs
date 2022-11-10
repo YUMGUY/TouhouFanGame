@@ -21,6 +21,7 @@ public class specialCustomizationBullets : MonoBehaviour
     [Header("Current Bullet Properties")]
     [SerializeField]
     private Vector2 currDirSD;
+    [SerializeField]
     private Vector2 currSCspeed;
     GameObject specialBullet;
 
@@ -56,9 +57,10 @@ public class specialCustomizationBullets : MonoBehaviour
        
         if(timerSC <= 0f)
         {
-            spawnCustomBullet();
+            
             if(willSpawnAuto == true)
             {
+                spawnCustomBullet();
                 indexSC = (indexSC + 1) % customDataPatterns.Length;
             }
             else if(randomSequenceOfPatterns == true)
@@ -93,7 +95,7 @@ public class specialCustomizationBullets : MonoBehaviour
 
     public void spawnCustomBullet()
     {
-       // print("spawn custom");
+        /* handles rotations of each bullet */
         if (GetBulletData().hasRandomAngles == false)
         {
             DistributedRotationsSC();

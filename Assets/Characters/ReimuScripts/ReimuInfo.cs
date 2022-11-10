@@ -6,7 +6,11 @@ public class ReimuInfo : MonoBehaviour
 {
     [Header("Damage System")]
     public float reimuDmg;
-
+    public bool canBeDamaged;
+    public float dmgTimer;
+    public float collisionCoolDown;
+   
+    
 
 
 
@@ -19,11 +23,20 @@ public class ReimuInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     
+        dmgTimer -= Time.deltaTime;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Reimu Collided");
+        if(dmgTimer <= 0 && canBeDamaged == true)
+        {
+            print("Reimu Collided");
+            dmgTimer = collisionCoolDown;
+            
+            GameManager.instance.DecreaseLife();
+        }
+       
     }
 }

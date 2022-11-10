@@ -11,6 +11,8 @@ public class SakuyaStage : MonoBehaviour
     public GameObject[] spawners;
     public GameObject pattern2Spawner;
     public GameObject pattern2Helper;
+    public Animator wineBottle1;
+    public Animator wineBottle2;
     public string knifeTag;
 
     [Header("Sakuya Info")]
@@ -34,9 +36,16 @@ public class SakuyaStage : MonoBehaviour
             MaidLovePattern();
         }
 
+        // testing wine anim and spit roast
         if (Input.GetKeyDown(KeyCode.T))
         {
             sakuyaController.SetTrigger("spitRoast");
+            wineBottle1.SetBool("fling", true);
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+
+            wineBottle1.SetTrigger("rightExist");
         }
     }
 
@@ -176,7 +185,7 @@ public class SakuyaStage : MonoBehaviour
             circlingB.transform.position = pattern2Helper.transform.position;
             float angle = (i * 2f * Mathf.PI * Mathf.Rad2Deg) / circles.Length;
             circlingB.transform.rotation = Quaternion.Euler(0, 0, angle);
-            circlingB.transform.localScale = new Vector3(3, 3, 0) ;
+           // circlingB.transform.localScale = new Vector3(1, 1, 0) ;
             circlingB.GetComponent<regularCustomBehavior>().direction = Vector2.right;
             circlingB.GetComponent<regularCustomBehavior>().blifeTime = pattern2Helper.GetComponent<regularSpawnInfo>().lifeTimeR;
             circlingB.GetComponent<regularCustomBehavior>().willAccel = pattern2Helper.GetComponent<regularSpawnInfo>().accelBullets;

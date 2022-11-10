@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 {
    
     public static GameManager instance;
-    
+
     [Header("Handle Reimu Powers")]
+    public GameObject ReimuManager;
     public float timeScale;
     public int currentHungerPoints;
     public int maxHungerPoints;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Display Scores/Points/Lives")]
     public TextMeshProUGUI hungerPointsDisplay;
+
+    private bool killedReimu = false;
     private void Awake()
     {
         if(GameManager.instance == null)
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
         }
 
         hungerPointsDisplay.text = currentHungerPoints.ToString("D2") + "/" + maxHungerPoints.ToString("D2");
+        ReimuManager = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Start is called before the first frame update
@@ -42,6 +46,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         SetHungerDisplay(); 
+
+        if(livesStage <= 0 && killedReimu == false)
+        {
+            killedReimu = true;
+            KillReimu();
+        }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             ++currentHungerPoints;
@@ -73,6 +84,13 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseLife()
     {
+        print("Lost a life");
         --livesStage;
+    }
+
+    public void KillReimu()
+    {
+        print("no lives left: killed Reimu");
+        ReimuManager.SetActive(false);
     }
 }
