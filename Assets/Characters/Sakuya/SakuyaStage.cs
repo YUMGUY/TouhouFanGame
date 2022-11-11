@@ -40,12 +40,14 @@ public class SakuyaStage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             sakuyaController.SetTrigger("spitRoast");
+            
             wineBottle1.SetBool("fling", true);
+            wineBottle2.SetBool("fling", true);
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
-
             wineBottle1.SetTrigger("rightExist");
+            wineBottle2.SetTrigger("leftExist");
         }
     }
 

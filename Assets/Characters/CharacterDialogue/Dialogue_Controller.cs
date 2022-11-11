@@ -11,8 +11,9 @@ public class Dialogue_Controller : MonoBehaviour
     public TextMeshProUGUI namePanel;
 
     [Header("Conversation Scene Info")]
-   // public ConversationScene[] listOfConvos;
-   // public ConversationScene currentConvo;
+
+   
+    public TouhouConvo currentConvo;
     private int convoIndex = 0;
     private State state = State.COMPLETED;
     public int pathSceneNumber = 0;
@@ -30,8 +31,8 @@ public class Dialogue_Controller : MonoBehaviour
     public GameObject choiceDisplay;
     public bool choiceMade;
 
-    [Header("Controls Characters")]
-    public CharacterController characterController;
+    //[Header("Controls Characters")]
+   // public CharacterController characterController;
     private enum State
     {
         TALKING, COMPLETED

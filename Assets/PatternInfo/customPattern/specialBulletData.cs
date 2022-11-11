@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpecialBulletData : ScriptableObject
 {
     public GameObject bulletResourceS;
-    public GameObject bulletPoolSC;
+    public string bulletPoolTag;
     public bool hasRandomAngles;
 
     [Header("spawning vars")]

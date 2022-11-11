@@ -22,13 +22,14 @@ public class specialCustomizationBullets : MonoBehaviour
     [SerializeField]
     private Vector2 currDirSD;
     [SerializeField]
-    private Vector2 currSCspeed;
+    private float currSCspeed;
     GameObject specialBullet;
 
     void Start()
     {
         timerSC = GetBulletData().fireRateSC;
         rotationsSC = new float[GetBulletData().numScols];
+    
     }
 
     // helper to access bullet data more easily
@@ -41,7 +42,9 @@ public class specialCustomizationBullets : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.G))
         {
+            
             indexSC++;
+            
         }
         // to avoid any potential error in adding indexSC to access the bullet data array
         if(indexSC >= customDataPatterns.Length)
@@ -60,6 +63,7 @@ public class specialCustomizationBullets : MonoBehaviour
             
             if(willSpawnAuto == true)
             {
+                
                 spawnCustomBullet();
                 indexSC = (indexSC + 1) % customDataPatterns.Length;
             }
@@ -104,7 +108,8 @@ public class specialCustomizationBullets : MonoBehaviour
 
         // get all attributes of bullets before for loop iteration ,optimization
         currDirSD = GetBulletData().dirSC;
-
+        currSCspeed = GetBulletData().bulletSpeedSC;
+        bulletPoolSC = GameObject.FindGameObjectWithTag(GetBulletData().bulletPoolTag);
         // important that spawning/pooling is done within for loop
         for (int i = 0; i < GetBulletData().numScols; ++i)
         {
@@ -126,7 +131,7 @@ public class specialCustomizationBullets : MonoBehaviour
                     specialBullet.GetComponent<regularCustomBehavior>().willAccel = true;
                     specialBullet.GetComponent<regularCustomBehavior>().speedCurve = GetBulletData().curveSC;
                 }
-                else { specialBullet.GetComponent<regularCustomBehavior>().bSpeed = GetBulletData().bulletSpeedSC; }
+                else { specialBullet.GetComponent<regularCustomBehavior>().bSpeed = currSCspeed; }
 
                 specialBullet.SetActive(true);
             }

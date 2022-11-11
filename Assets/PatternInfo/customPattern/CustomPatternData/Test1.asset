@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test1
   m_EditorClassIdentifier: 
   bulletResourceS: {fileID: 0}
-  bulletPoolSC: {fileID: 8410929286893041305, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+  bulletPoolTag: bulletPool
   hasRandomAngles: 0
   numScols: 5
   fireRateSC: 0.5

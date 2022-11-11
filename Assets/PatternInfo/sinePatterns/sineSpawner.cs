@@ -9,9 +9,10 @@ public class sineSpawner : MonoBehaviour
      public GameObject bulletPoolSine;
     public float lifeTimeM;
 
-   
+
 
     [Header("Spawn Variables")]
+    public bool autoSpawn;
     public int numberOfBulletColumns;
     public float bulletmSpeed;
     public float mCompression;
@@ -47,27 +48,16 @@ public class sineSpawner : MonoBehaviour
             GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1");
             print(bulletsInScene.Length);
         }
-        if (reverseBullets == true)
-        {
-            GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1"); // rn the only prefab with a bullet tag
-            foreach (GameObject bullet in bulletsInScene)
-            {
-                bullet.GetComponent<sineWaveInfo>().speed = -1 * bulletmSpeed;
-            }
-        }
-        else
-        {
-            GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1");
-            foreach (GameObject bullet in bulletsInScene)
-            {
-                bullet.GetComponent<sineWaveInfo>().speed = bulletmSpeed;
-            }
-        }
+       
 
 
         if (spawnTimer <= 0)
-        {
-            SpawnRegularBullets(mAmplitude, mCompression, bulletmSpeed);
+        {   
+            if(autoSpawn)
+            {
+                SpawnRegularBullets(mAmplitude, mCompression, bulletmSpeed);
+            }
+          
 
             // spawn two helixes
             if (doubleHelix)
@@ -123,6 +113,26 @@ public class sineSpawner : MonoBehaviour
         return;
     }
 
+    // Should be a function that's called b/c if not, it will affect all bullets regardless of whether they are spawned
+    public void ReverseBullets()
+    {
+        if (reverseBullets == true)
+        {
+            GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1"); // rn the only prefab with a bullet tag
+            foreach (GameObject bullet in bulletsInScene)
+            {
+                bullet.GetComponent<sineWaveInfo>().speed = -1 * bulletmSpeed;
+            }
+        }
+        else
+        {
+            GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1");
+            foreach (GameObject bullet in bulletsInScene)
+            {
+                bullet.GetComponent<sineWaveInfo>().speed = bulletmSpeed;
+            }
+        }
+    }
     public void DistributedRotations()
     {
 

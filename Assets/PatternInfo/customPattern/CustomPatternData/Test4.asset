@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d380e7b945dcbb34c91443ba5e8cb053, type: 3}
-  m_Name: Test2
+  m_Name: Test4
   m_EditorClassIdentifier: 
   bulletResourceS: {fileID: 0}
   bulletPoolTag: bulletPool
   hasRandomAngles: 0
-  numScols: 3
+  numScols: 6
   fireRateSC: 0.3
   minAngle: 0
   maxAngle: 360
-  lifeTimeSC: 4
+  lifeTimeSC: 5
   willAccelSC: 0
-  bulletSpeedSC: 2
+  bulletSpeedSC: 1.5
   dirSC: {x: 1, y: 0}
   curveSC:
     serializedVersion: 2

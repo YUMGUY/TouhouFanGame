@@ -8,6 +8,8 @@ TagManager:
   - bulletPool
   - knife
   - hungerUI
+  - bsphere_pool
+  - sineBulletPool
   layers:
   - Default
   - TransparentFX
