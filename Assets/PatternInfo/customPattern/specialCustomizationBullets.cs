@@ -83,7 +83,7 @@ public class specialCustomizationBullets : MonoBehaviour
         float angleInc = (GetBulletData().maxAngle - GetBulletData().minAngle) / GetBulletData().numScols;
         for (int i = 0; i < GetBulletData().numScols; ++i)
         {   
-            rotationsSC[i] = angle;
+            rotationsSC[i] = angle + GetBulletData().minAngle; // adding min angle, testing it out
             angle += angleInc;
         }
     }

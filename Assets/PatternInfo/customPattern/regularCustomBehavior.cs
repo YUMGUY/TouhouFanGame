@@ -10,11 +10,13 @@ public class regularCustomBehavior : MonoBehaviour
     public float bSpeed;
     public float blifeTime;
     public Vector2 direction;
+    public bool bulletCanMove = true;
 
     [Header("Optional Acceleration")]
     public AnimationCurve speedCurve;
     public bool willAccel;
     public float timeAcceleration;
+    private float originalSpeed;
 
     [Header("Gravity Properties")]
     public bool hasGravity;
@@ -38,6 +40,11 @@ public class regularCustomBehavior : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
+        if(bulletCanMove == false)
+        {
+            return;
+        }
+
         blifeTime -= Time.deltaTime;
         if(blifeTime <= 0)
         {
@@ -56,12 +63,23 @@ public class regularCustomBehavior : MonoBehaviour
 
 
 
-        transform.Translate(bSpeed * direction * Time.deltaTime);
+        transform.Translate(Time.deltaTime * bSpeed  * direction); // marginally better calculation
     }
 
 
     private void GravityAccleration()
     {
 
+    }
+
+    public void TimeFreeze()
+    {
+        originalSpeed = bSpeed;
+        bSpeed = 0f;
+    }
+
+    public void Unfreeze()
+    {
+        bSpeed = originalSpeed;
     }
 }

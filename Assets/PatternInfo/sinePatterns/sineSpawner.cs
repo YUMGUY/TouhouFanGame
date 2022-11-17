@@ -79,7 +79,7 @@ public class sineSpawner : MonoBehaviour
         // setting angle later in DistributedRotations, figure out how to resize array accordingly, maybe old bulletsize, new bulletsize, 
         // check if new bullet size > old bullet size, then make rotation = new?
         float angle = 0;
-        float increment = (maxRotation - minRotation) / numberOfBulletColumns;
+        float increment = ((maxRotation - minRotation) / numberOfBulletColumns);
         for (int i = 0; i < numberOfBulletColumns; ++i)
         {
             GameObject bullet1 = bulletPoolSine.GetComponent<simpleBulletPool>().GetPooledObject();
@@ -89,13 +89,14 @@ public class sineSpawner : MonoBehaviour
                 bullet1.transform.position = transform.position;
 
                 if (parentControl == true)
-                {
-                    bullet1.transform.eulerAngles = new Vector3(0, 0, angle + transform.eulerAngles.z);
+                {   
+                    // so that min and max rotation affect where the bullets are going
+                    bullet1.transform.eulerAngles = new Vector3(0, 0, angle + minRotation + transform.eulerAngles.z);
                 }
                 // currently the bullets being spawned are not parented to the parent's rotation
                 else
                 {
-                    bullet1.transform.eulerAngles = new Vector3(0, 0, angle);
+                    bullet1.transform.eulerAngles = new Vector3(0, 0, angle + minRotation);
                 }
                 // these resets are very important, lifetime and distance travelled
                 bullet1.GetComponent<sineWaveInfo>().lifeTime = lifeTimeM;

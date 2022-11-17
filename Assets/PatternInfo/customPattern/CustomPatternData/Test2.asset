@@ -17,8 +17,8 @@ MonoBehaviour:
   hasRandomAngles: 0
   numScols: 3
   fireRateSC: 0.3
-  minAngle: 0
-  maxAngle: 360
+  minAngle: 180
+  maxAngle: 270
   lifeTimeSC: 4
   willAccelSC: 0
   bulletSpeedSC: 2

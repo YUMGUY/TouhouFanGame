@@ -19,6 +19,6 @@ MonoBehaviour:
   - convoText: Stop right there!
     currentSpriteEmotion: {fileID: 0}
     currentAction: 0
-  - convoText: Stop right there!
+  - convoText: What do you want..
     currentSpriteEmotion: {fileID: 0}
     currentAction: 0

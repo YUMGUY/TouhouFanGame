@@ -64,6 +64,24 @@ public class GameManager : MonoBehaviour
             print("now power up");
             IncreaseMaxHungerPoints();
         }
+
+
+        // Dialogue Code
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            Dialogue_Controller d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
+            if(d_control != null) // avoid situation where it can't find Dialogue Canvas
+            {
+                d_control.startConvo();
+            }
+
+            if(d_control == null)
+            {
+                Debug.Log("Can't find Dialogue Canvas");
+            }
+            
+        }
     }
 
     /* hunger points system */

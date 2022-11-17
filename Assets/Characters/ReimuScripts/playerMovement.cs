@@ -16,6 +16,11 @@ public class playerMovement : MonoBehaviour
     private float moveX;
     private float moveY;
     private Vector2 movement;
+
+
+    [Header("HitBox Dynamics")]
+    public GameObject hitbox;
+    public GameObject outline;
     // Start is called before the first frame update
 
     void Start()
@@ -41,10 +46,17 @@ public class playerMovement : MonoBehaviour
         moveY = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(moveX, moveY).normalized;
+        if (hitbox.activeInHierarchy && outline.activeInHierarchy)
+        {
+            hitbox.SetActive(false);
+            outline.SetActive(false);
+        }
 
-        if(Input.GetKey(KeyCode.LeftShift) && playerCanMove)
+        if (Input.GetKey(KeyCode.LeftShift) && playerCanMove)
         {
             playerSpeed = slowSpeed;
+            hitbox.SetActive(true);
+            outline.SetActive(true);
         }
         else if(Input.GetKey(KeyCode.LeftShift) && playerCanMove == false)
         {
@@ -56,6 +68,8 @@ public class playerMovement : MonoBehaviour
         }
         else
         {
+           
+            
             playerSpeed = 0;
         }
     }

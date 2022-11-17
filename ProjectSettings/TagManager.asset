@@ -10,6 +10,7 @@ TagManager:
   - hungerUI
   - bsphere_pool
   - sineBulletPool
+  - DialogueCanvas
   layers:
   - Default
   - TransparentFX

@@ -39,6 +39,7 @@ public class SakuyaStage : MonoBehaviour
         // testing wine anim and spit roast
         if (Input.GetKeyDown(KeyCode.T))
         {
+            
             sakuyaController.SetTrigger("spitRoast");
             
             wineBottle1.SetBool("fling", true);
@@ -48,6 +49,16 @@ public class SakuyaStage : MonoBehaviour
         {
             wineBottle1.SetTrigger("rightExist");
             wineBottle2.SetTrigger("leftExist");
+            wineBottle1.SetBool("fling", false);
+            wineBottle2.SetBool("fling", false);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            FreezeAllBullets();
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            UnfreezeAllBullets();
         }
     }
 
@@ -117,6 +128,7 @@ public class SakuyaStage : MonoBehaviour
         ReimuTarget.GetComponent<playerMovement>().playerCanMove = false;
         ReimuTarget.GetComponent<SpriteRenderer>().color = Color.blue;
         print("Sakuya used time stop");
+        FreezeAllBullets();
 
         /*
          effects of time stop, make everything grey and all bullets stop
@@ -154,8 +166,11 @@ public class SakuyaStage : MonoBehaviour
             yield return new WaitForSeconds(.5f);
         }
 
+
         yield return new WaitForSeconds(1f);
 
+
+        UnfreezeAllBullets();
         print("Time has resumed");
         ReimuTarget.GetComponent<playerMovement>().playerCanMove = true;
         ReimuTarget.GetComponent<SpriteRenderer>().color = orig;
@@ -211,9 +226,42 @@ public class SakuyaStage : MonoBehaviour
         }
     }
 
+    // move these 2 functions into game manager
+    public void FreezeAllBullets()
+    {
+
+        GameObject[] allKnives = GameObject.FindGameObjectsWithTag("knife");
+        GameObject[] allBullets = GameObject.FindGameObjectsWithTag("regularBullet");
+        print(allKnives.Length + "is the length of all knive arrays");
+        print(allBullets.Length + "is the length of all bullet arrays");
+        foreach (GameObject knife in allKnives)
+        {
+            knife.GetComponent<regularCustomBehavior>().bulletCanMove = false;
+        }
+        foreach (GameObject bullet in allBullets)
+        {
+            bullet.GetComponent<regularCustomBehavior>().bulletCanMove = false;
+        }
+    }
+    public void UnfreezeAllBullets()
+    {
+
+        GameObject[] allKnives = GameObject.FindGameObjectsWithTag("knife");
+        GameObject[] allBullets = GameObject.FindGameObjectsWithTag("regularBullet");
+        print(allKnives.Length + "is the length of all knive arrays");
+        print(allBullets.Length + "is the length of all bullet arrays");
+        foreach (GameObject knife in allKnives)
+        {
+            knife.GetComponent<regularCustomBehavior>().bulletCanMove = true;
+        }
+        foreach (GameObject bullet in allBullets)
+        {
+            bullet.GetComponent<regularCustomBehavior>().bulletCanMove = true;
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////
-    
-  
+
+
     /* ////////////////////////// 3RD PATTERN " POP THE CHAMPAGNE " /////////////////////////////
          
      */
