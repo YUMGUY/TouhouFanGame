@@ -11,6 +11,10 @@ TagManager:
   - bsphere_pool
   - sineBulletPool
   - DialogueCanvas
+  - regularBullet
+  - regularBlue
+  - reimu_Bullet
+  - bigBlueSphere
   layers:
   - Default
   - TransparentFX

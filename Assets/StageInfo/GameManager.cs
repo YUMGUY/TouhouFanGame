@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Display Scores/Points/Lives")]
     public TextMeshProUGUI hungerPointsDisplay;
+    public TextMeshProUGUI livesDisplay;
 
     private bool killedReimu = false;
     private void Awake()
@@ -39,12 +40,29 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Dialogue_Controller d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
+        if (d_control != null) // avoid situation where it can't find Dialogue Canvas
+        {
+            d_control.startConvo();
+            d_control.dialoguePanel.SetActive(true);
+            d_control.character1.SetActive(true);
+            d_control.character2.SetActive(true);
+
+        }
+
+
+        if (d_control == null)
+        {
+            Debug.Log("Can't find Dialogue Canvas");
+        }
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
+
         SetHungerDisplay(); 
 
         if(livesStage <= 0 && killedReimu == false)
@@ -64,6 +82,8 @@ public class GameManager : MonoBehaviour
             print("now power up");
             IncreaseMaxHungerPoints();
         }
+        livesDisplay.text = "Lives: " + livesStage.ToString();
+
 
 
         // Dialogue Code
@@ -92,6 +112,19 @@ public class GameManager : MonoBehaviour
     private void SetHungerDisplay()
     {
         hungerPointsDisplay.text = currentHungerPoints.ToString() + "/" + maxHungerPoints.ToString();
+    }
+
+    /// BOMB & DESTROY ALL BULLETS IN SCENE
+    /// 
+    /// ////////////////////////////////////
+    public void DisableAllBullets()
+    {
+        print("disabled all bullets");
+        regularCustomBehavior[] allregularBullets = GameObject.FindObjectsOfType<regularCustomBehavior>();
+        foreach(regularCustomBehavior bullet in allregularBullets)
+        {
+            bullet.gameObject.SetActive(false);
+        }
     }
 
     /* lives and power system*/

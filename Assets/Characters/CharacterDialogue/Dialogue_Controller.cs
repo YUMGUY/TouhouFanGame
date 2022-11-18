@@ -9,6 +9,8 @@ public class Dialogue_Controller : MonoBehaviour
     public float typingSpeed;
     public TextMeshProUGUI textPanel;
     public TextMeshProUGUI namePanel;
+    
+    public SakuyaStage sakuya_stage;
 
     [Header("Conversation Scene Info")]
 
@@ -122,6 +124,8 @@ public class Dialogue_Controller : MonoBehaviour
             dialoguePanel.SetActive(false);
             character1.SetActive(false);
             character2.SetActive(false);
+        
+            sakuya_stage.StartPhase1();
         }
     }
 

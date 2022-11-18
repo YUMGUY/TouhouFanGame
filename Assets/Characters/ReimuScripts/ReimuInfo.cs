@@ -5,10 +5,18 @@ using UnityEngine;
 public class ReimuInfo : MonoBehaviour
 {
     [Header("Damage System")]
+    public GameObject reimuBullet;
+    public float fireRate_Reimu;
+    public float fireCooldown;
+    public Transform firingPos_1;
+    public Transform firingPos_2;
+
     public float reimuDmg;
     public bool canBeDamaged;
+    public bool canShoot;
     public float dmgTimer;
     public float collisionCoolDown;
+
    
     
 
@@ -23,7 +31,13 @@ public class ReimuInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        fireRate_Reimu -= Time.deltaTime;
+        
+        if(Input.GetKey(KeyCode.Z) && fireRate_Reimu <= 0 && canShoot == true)
+        {
+            ShootBullets();
+            fireRate_Reimu = fireCooldown;
+        }
         dmgTimer -= Time.deltaTime;
 
     }
@@ -38,5 +52,14 @@ public class ReimuInfo : MonoBehaviour
             GameManager.instance.DecreaseLife();
         }
        
+    }
+
+    // add timer
+    public void ShootBullets()
+    {
+        GameObject b1 = Instantiate(reimuBullet);
+        GameObject b2 = Instantiate(reimuBullet);
+        b1.transform.position = firingPos_1.position;
+        b2.transform.position = firingPos_2.position;
     }
 }

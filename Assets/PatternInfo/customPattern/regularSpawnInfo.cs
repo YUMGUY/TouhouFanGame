@@ -78,14 +78,14 @@ public class regularSpawnInfo : MonoBehaviour
             }
         }
 
-        else if(makeHeart == true)
-        {
-            if(Input.GetKeyDown(KeyCode.H))
-            {
-                print("spawnHeart");
-                StartCoroutine(MaidsLove());
-            }
-        }
+        //else if(makeHeart == true)
+        //{
+        //    if(Input.GetKeyDown(KeyCode.H))
+        //    {
+        //        print("spawnHeart");
+        //        StartCoroutine(MaidsLove());
+        //    }
+        //}
         
     }
 
@@ -149,7 +149,7 @@ public class regularSpawnInfo : MonoBehaviour
     // can make the heart a prefab as well
    GameObject[] spawnHeart()
     {
-        print("spawned heart bullets"); // for testing
+       // print("spawned heart bullets"); // for testing
         GameObject[] heartCollection = new GameObject[numberOfCustomBullets];
         float t = 0;
         for(int i = 0; i < numberOfCustomBullets; ++i)
@@ -213,9 +213,9 @@ public class regularSpawnInfo : MonoBehaviour
         
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
-            yield return new WaitForSeconds(.01f);
+            //yield return new WaitForSeconds(.005f);
             // continuosly tracks Reimu
-            Vector2 dir = Reimu.transform.position - mBullets[i].transform.position;              // this code tracks the player's position once
+            Vector2 dir = Reimu.transform.position - mBullets[i].transform.position;  // 11-17: this code tracks the player's position once
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);
 

@@ -33,7 +33,7 @@ public class specialCustomizationBullets : MonoBehaviour
     }
 
     // helper to access bullet data more easily
-    SpecialBulletData GetBulletData()
+    public SpecialBulletData GetBulletData()
     {
         return customDataPatterns[indexSC];
     }
@@ -99,6 +99,12 @@ public class specialCustomizationBullets : MonoBehaviour
 
     public void spawnCustomBullet()
     {
+        // temporary
+        if (rotationsSC.Length != GetBulletData().numScols)
+        {
+            print("custom rotation size changed");
+            rotationsSC = new float[GetBulletData().numScols];
+        }
         /* handles rotations of each bullet */
         if (GetBulletData().hasRandomAngles == false)
         {

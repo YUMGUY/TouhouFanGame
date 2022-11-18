@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SakuyaStage : MonoBehaviour
 {
 
+    [Header("Stage Flags")]
+    public bool phase1;
+    public bool phase2;
+    public bool phase3;
+    public SakuyaInfo sakuyaInfoSource;
+    public AudioClip BattleStageMusic;
 
     [Header("bullet spawners and Time Variables")]
     public GameObject Sakuya_;
+    public specialCustomizationBullets personalSakuyaSpawner;
+
     public GameObject[] spawners;
     public GameObject pattern2Spawner;
     public GameObject pattern2Helper;
@@ -15,11 +24,14 @@ public class SakuyaStage : MonoBehaviour
     public Animator wineBottle2;
     public string knifeTag;
 
-    [Header("Sakuya Info")]
-    public int sakuyaHp;
+    [Header("Sakuya Bullet & Animation Variables")]
     public Animator sakuyaController;
     public GameObject ReimuTarget;
     private Vector2 targetPosition_;
+
+    private Coroutine battle;
+    private bool startBattle = false;
+    private int phaseCounter = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -60,6 +72,31 @@ public class SakuyaStage : MonoBehaviour
         {
             UnfreezeAllBullets();
         }
+
+        // scuffed way to stop the 1st phase
+        if (sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase1 == true)
+        {
+            print("stopped phase 1");
+            StopCoroutine(battle);
+            phase1 = false;
+ 
+            GameManager.instance.DisableAllBullets();
+            sakuyaInfoSource.currentSakuyaHp = .001f;
+            StartCoroutine(StartPhase2());
+          
+        }
+        else if (sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase2 == true)
+        {   
+            print("stopped phase 2");
+            StopCoroutine(battle);
+            phase2 = false;
+            GameManager.instance.DisableAllBullets();
+           // battle = StartCoroutine(SakuyaBattle());
+           // ++phaseCounter;
+        }
+        
+
+
     }
 
     // ////////////////////////////////////////////////////// FIRST PATTERN " COMPLIMENTS TO THE CHEF "  //////////////////
@@ -125,19 +162,20 @@ public class SakuyaStage : MonoBehaviour
 
         Color orig = ReimuTarget.GetComponent<SpriteRenderer>().color; // for debugging purposes
 
+        ReimuTarget.GetComponent<ReimuInfo>().canShoot = false;
         ReimuTarget.GetComponent<playerMovement>().playerCanMove = false;
         ReimuTarget.GetComponent<SpriteRenderer>().color = Color.blue;
         print("Sakuya used time stop");
         FreezeAllBullets();
 
         /*
-         effects of time stop, make everything grey and all bullets stop
+         effects of time stop, make everything grey/color different and all bullets stop
          
          */
 
-        GameObject[] encircleCollection = new GameObject[40]; // arbitrary number, can be changed to whatever as long as it is even, and the # of iterations match
+        GameObject[] encircleCollection = new GameObject[30]; // arbitrary number, can be changed to whatever as long as it is even, and the # of iterations match
         GameObject prefabBullet = pattern2Spawner.GetComponent<regularSpawnInfo>().bulletR;
-        for (int k = 0; k < 4; ++k)
+        for (int k = 0; k < 3; ++k)
         {
             for (int i = 0; i < 10; ++i)
             {
@@ -174,9 +212,10 @@ public class SakuyaStage : MonoBehaviour
         print("Time has resumed");
         ReimuTarget.GetComponent<playerMovement>().playerCanMove = true;
         ReimuTarget.GetComponent<SpriteRenderer>().color = orig;
+        ReimuTarget.GetComponent<ReimuInfo>().canShoot = true;
 
         // unfreeze bullets layer by layer
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 3; ++i)
         {
             for (int j = 0; j < 10; ++j)
             {
@@ -222,6 +261,7 @@ public class SakuyaStage : MonoBehaviour
         {   
             circles[i].GetComponent<regularCustomBehavior>().willAccel = true;
             pattern2Helper.GetComponent<regularSpawnInfo>().spawnBullet();
+            yield return new WaitForSeconds(.1f);
            
         }
     }
@@ -232,8 +272,9 @@ public class SakuyaStage : MonoBehaviour
 
         GameObject[] allKnives = GameObject.FindGameObjectsWithTag("knife");
         GameObject[] allBullets = GameObject.FindGameObjectsWithTag("regularBullet");
-        print(allKnives.Length + "is the length of all knive arrays");
-        print(allBullets.Length + "is the length of all bullet arrays");
+        regularCustomBehavior[] bulletsInScene = FindObjectsOfType<regularCustomBehavior>();
+        ReimuBulletInfo[] reimuBullets = FindObjectsOfType<ReimuBulletInfo>();
+    
         foreach (GameObject knife in allKnives)
         {
             knife.GetComponent<regularCustomBehavior>().bulletCanMove = false;
@@ -242,12 +283,23 @@ public class SakuyaStage : MonoBehaviour
         {
             bullet.GetComponent<regularCustomBehavior>().bulletCanMove = false;
         }
+        foreach (regularCustomBehavior bullet in bulletsInScene)
+        {
+            bullet.bulletCanMove = false;
+        }
+        foreach (ReimuBulletInfo bullet in reimuBullets)
+        {
+            bullet.RbulletSpeed = 0;
+        }
     }
     public void UnfreezeAllBullets()
     {
 
         GameObject[] allKnives = GameObject.FindGameObjectsWithTag("knife");
         GameObject[] allBullets = GameObject.FindGameObjectsWithTag("regularBullet");
+        ReimuBulletInfo[] reimuBullets = FindObjectsOfType<ReimuBulletInfo>();
+
+        regularCustomBehavior[] bulletsInScene = FindObjectsOfType<regularCustomBehavior>();
         print(allKnives.Length + "is the length of all knive arrays");
         print(allBullets.Length + "is the length of all bullet arrays");
         foreach (GameObject knife in allKnives)
@@ -257,6 +309,15 @@ public class SakuyaStage : MonoBehaviour
         foreach (GameObject bullet in allBullets)
         {
             bullet.GetComponent<regularCustomBehavior>().bulletCanMove = true;
+        }
+
+        foreach(regularCustomBehavior bullet in bulletsInScene)
+        {
+            bullet.bulletCanMove = true;
+        }
+        foreach (ReimuBulletInfo bullet in reimuBullets)
+        {
+            bullet.RbulletSpeed = 10;
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -269,13 +330,104 @@ public class SakuyaStage : MonoBehaviour
 
 
     //
-    private void OnTriggerEnter2D(Collider2D other)
+
+    /////////////// CODE FOR MOVING SAKUYA //////////////
+    
+
+
+    ////////////////// CODE FOR CONTROLLING FLOW OF BATTLE////////////////////////////////////////////////////////////////
+   public IEnumerator SakuyaBattle()
     {
-        //account for reimu bullet
-        /*if(other.CompareTag()) {
-        
+        print("started battle: so hungry");
+        while(phase1 == true)
+        {
+           
+            MaidLovePattern();
+            yield return new WaitForSeconds(3f);
+            // Sakuya Spawning Bullets
+            for(int i = 0; i < 5; ++i)
+            {
+                personalSakuyaSpawner.indexSC = 4;
+               
+                personalSakuyaSpawner.spawnCustomBullet();
+                yield return new WaitForSeconds(personalSakuyaSpawner.GetBulletData().fireRateSC);
+            }
+
+            // move to function
+            float randNumX = Random.Range(-1, 2);
+            float randNumY = Random.Range(0, 2);
+            Vector3 newPosition = Sakuya_.transform.position + new Vector3(randNumX, randNumY, 0);
+            if (Sakuya_.transform.position.y > 3f && randNumY > 0)
+            {
+                randNumY = Random.Range(-1.5f,-.05f);
+            }
+            if(Sakuya_.transform.position.x > 7 || Sakuya_.transform.position.x < -7 || Sakuya_.transform.position.y > 3 || Sakuya_.transform.position.y < 1.75)
+            {
+                newPosition = new Vector3(2, 2, 0); // temporary default positions
+            }
+           
+            StartCoroutine(sakuyaInfoSource.MoveToLocation(newPosition));
+            yield return new WaitForSeconds(3f);
+            yield return null;
         }
-        */
+ 
+    }
+
+
+    public IEnumerator StartPhase2()
+    {
+        yield return new WaitForFixedUpdate();
+        print("stage 2 started");
+        sakuyaInfoSource.canBeDamagedByReimu = false;
+        yield return (StartCoroutine(sakuyaInfoSource.NewMaxHp(800f)));
+        yield return new WaitForSeconds(.5f);
+        sakuyaInfoSource.canBeDamagedByReimu = true;
+        battle = StartCoroutine(SakuyaBattlePhase2());
+        yield return null;
+        
+    }
+    // interconnected with StartPhase2
+    public void StartPhase1()
+    {   
+        if(startBattle == false)
+        {
+            battle = StartCoroutine(SakuyaBattle());
+            GameManager.instance.GetComponent<AudioSource>().clip = BattleStageMusic;
+            GameManager.instance.GetComponent<AudioSource>().Play();
+            startBattle = true;
+        }
+       
+    }
+    public IEnumerator SakuyaBattlePhase2()
+    {
+        StartCoroutine(sakuyaInfoSource.MoveToLocation(new Vector2(0, 2f)));
+        print("phase 2 started");
+        while(phase2 == true)
+        {
+            sakuyaController.SetTrigger("spitRoast");
+            yield return null;
+
+
+            yield return new WaitForSeconds(sakuyaController.GetCurrentAnimatorStateInfo(0).length + 6f);
+
+         
+            personalSakuyaSpawner.indexSC = 5;
+            personalSakuyaSpawner.spawnCustomBullet();
+            personalSakuyaSpawner.indexSC = 6;
+            personalSakuyaSpawner.spawnCustomBullet();
+            personalSakuyaSpawner.indexSC = 7;
+            personalSakuyaSpawner.spawnCustomBullet();
+            yield return new WaitForSeconds(2f);
+            
+            
+        }
+        
+        yield return null;
+    }
+
+    public IEnumerator StartPhase3()
+    {
+        yield return null;
     }
 
 }
