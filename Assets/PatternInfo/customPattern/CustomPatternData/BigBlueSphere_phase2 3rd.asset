@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletResourceS: {fileID: 0}
   bulletPoolTag: bigBlueSphere
   hasRandomAngles: 1
-  numScols: 3
+  numScols: 5
   fireRateSC: 0.15
   minAngle: 180
   maxAngle: 360

@@ -101,6 +101,7 @@ MonoBehaviour:
   bSpeed: 0
   blifeTime: 0
   direction: {x: 0, y: 0}
+  bulletCanMove: 1
   speedCurve:
     serializedVersion: 2
     m_Curve: []

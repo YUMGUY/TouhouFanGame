@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigBlueSphere_phase2_2nd
   m_EditorClassIdentifier: 
   bulletResourceS: {fileID: 0}
-  bulletPoolTag: bsphere_pool
+  bulletPoolTag: bigBlueSphere
   hasRandomAngles: 0
   numScols: 5
   fireRateSC: 0.15

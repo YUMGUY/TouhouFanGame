@@ -11,7 +11,7 @@ public class ReimuInfo : MonoBehaviour
     public Transform firingPos_1;
     public Transform firingPos_2;
 
-    public float reimuDmg;
+    public float reimuDmg; // needs to be connected to sakuya info
     public bool canBeDamaged;
     public bool canShoot;
     public float dmgTimer;
@@ -44,7 +44,7 @@ public class ReimuInfo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(dmgTimer <= 0 && canBeDamaged == true)
+        if(dmgTimer <= 0 && canBeDamaged == true) // ADD HUNGER BULLET COLLISION, ADD POINTS AND audioclip
         {
             print("Reimu Collided");
             dmgTimer = collisionCoolDown;
@@ -52,6 +52,8 @@ public class ReimuInfo : MonoBehaviour
             GameManager.instance.DecreaseLife();
         }
        
+
+        // add tag conditional for green bullets
     }
 
     // add timer

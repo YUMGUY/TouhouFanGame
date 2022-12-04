@@ -35,9 +35,9 @@ public class SakuyaInfo : MonoBehaviour
         // if collision == reimu bullet, current -=
         if(collision != null)
         {
-            if (collision.CompareTag("reimu_Bullet"))
+            if (collision.CompareTag("reimu_Bullet") && canBeDamagedByReimu == true)
             {
-                currentSakuyaHp -= 2.5f;
+                currentSakuyaHp -= 5f;
                 Destroy(collision.gameObject);
             }
         }
@@ -72,11 +72,11 @@ public class SakuyaInfo : MonoBehaviour
     {
         movingInBattle = true;
         float time1_ = 0f;
-        float duration = 3.0f;
-
+        float duration = 1.5f;
+        Vector3 startingPosition = transform.position;
        while(time1_ < duration)
         {
-            transform.position = Vector3.Lerp(transform.position, newLocation, time1_ / duration);
+            transform.position = Vector3.Lerp(startingPosition, newLocation, time1_ / duration);
             time1_ += Time.deltaTime;
             yield return null;
         }

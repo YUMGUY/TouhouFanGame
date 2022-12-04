@@ -14,7 +14,8 @@ public class Dialogue_Controller : MonoBehaviour
 
     [Header("Conversation Scene Info")]
 
-   
+    public TouhouConvo[] TouhouConversations;
+    public int TouhouConversationIndex;
     public TouhouConvo currentConvo;
     private int convoIndex = 0;
     private State state = State.COMPLETED;
@@ -29,6 +30,7 @@ public class Dialogue_Controller : MonoBehaviour
     public GameObject dialoguePanel;
     public GameObject character1;
     public GameObject character2;
+    public bool convoStarted;
     
 
     //[Header("Controls Characters")]
@@ -42,8 +44,10 @@ public class Dialogue_Controller : MonoBehaviour
     void Start()
     {
         // for now start at the beginning, change to function called at start
-       // startConvo(); // now has both index = 0 and the start coroutein, can be called from GameManagerScript
+        // startConvo(); // now has both index = 0 and the start coroutein, can be called from GameManagerScript
         // do thhe ++convoindex thing, make a sceneController script, add onto Dialogue Canvas
+        TouhouConversationIndex = 0;// Touhouconversationindex and convoindex are different, convoindex is used to represent place in the conversations list
+                                    // inside a Touhou Dialogue
 
     }
 
@@ -51,7 +55,7 @@ public class Dialogue_Controller : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && convoStarted == true)
         {
             if (state == State.COMPLETED) // if the line is completed
             {
@@ -71,7 +75,14 @@ public class Dialogue_Controller : MonoBehaviour
 
     public void startConvo()
     {
+        convoStarted = true;
         convoIndex = 0;
+
+        // enable ui 
+        dialoguePanel.SetActive(true); // polish later on by adding text box animations for beginning/end
+        character1.SetActive(true);
+        character2.SetActive(true);
+
         StartCoroutine(typeText(currentConvo.conversations[convoIndex].convoText));
     }
 
@@ -94,15 +105,13 @@ public class Dialogue_Controller : MonoBehaviour
 
             if (++charIndex == text.Length)
             {
-                print("finished");
+               // print("finished");
                 state = State.COMPLETED;
                 break;
             }
         }
 
         yield return null;
-
-
     }
 
 
@@ -124,8 +133,11 @@ public class Dialogue_Controller : MonoBehaviour
             dialoguePanel.SetActive(false);
             character1.SetActive(false);
             character2.SetActive(false);
-        
-            sakuya_stage.StartPhase1();
+
+            convoStarted = false;
+            StartSakuyaPhase(TouhouConversationIndex);
+            //sakuya_stage.StartPhase1(); // make switch based on build index so that stages dialogue ends, should be called in GameManager
+            
         }
     }
 
@@ -141,26 +153,36 @@ public class Dialogue_Controller : MonoBehaviour
                 return;
             }
 
-            // since I know the names of the sprites for each emotion
-            //switch (spriteEmotion.name)
-            //{
-            //    case "pointAlice1":
-            //        baseAliceSprite.sprite = spriteEmotion;
-            //        aliceAnimator.SetTrigger("smartass");
-            //        break;
-
-            //    case "tipAlice1":
-            //        baseAliceSprite.sprite = spriteEmotion;
-            //        break;
-
-            //    case "aliceTransform1":
-            //        baseAliceSprite.sprite = spriteEmotion;
-            //        aliceAnimator.SetTrigger("transformD");
-            //        break;
-
-            //}
+    
 
        // }
     }
 
+    public void ShowUI()
+    {
+
+    }
+
+    public void HideUI()
+    {
+
+    }
+    // Move to GameManager later, give sakuyastage variable
+    public void StartSakuyaPhase(int stageIndex)
+    {
+        switch (stageIndex)
+        {
+            case 0:
+                sakuya_stage.StartPhase1();
+                break;
+            case 1:
+               StartCoroutine( sakuya_stage.StartPhase2Coroutine() );
+                break;
+            case 2:
+                // start conversation after phase 3 ended
+                break;
+   
+        }
+        return;
+    }
 }

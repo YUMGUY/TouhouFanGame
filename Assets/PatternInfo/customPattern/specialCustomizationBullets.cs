@@ -40,12 +40,12 @@ public class specialCustomizationBullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
-        {
+        //if(Input.GetKeyDown(KeyCode.G))
+        //{
             
-            indexSC++;
+        //    indexSC++;
             
-        }
+        //}
         // to avoid any potential error in adding indexSC to access the bullet data array
         if(indexSC >= customDataPatterns.Length)
         {
@@ -80,7 +80,12 @@ public class specialCustomizationBullets : MonoBehaviour
     public void DistributedRotationsSC()
     {
         float angle = 0;
-        float angleInc = (GetBulletData().maxAngle - GetBulletData().minAngle) / GetBulletData().numScols;
+        if(GetBulletData().numScols == 1)
+        {
+            rotationsSC[0] = GetBulletData().minAngle;
+            return;
+        }
+        float angleInc = (GetBulletData().maxAngle - GetBulletData().minAngle) / (GetBulletData().numScols - 1);
         for (int i = 0; i < GetBulletData().numScols; ++i)
         {   
             rotationsSC[i] = angle + GetBulletData().minAngle; // adding min angle, testing it out
@@ -148,5 +153,13 @@ public class specialCustomizationBullets : MonoBehaviour
     public void EnableSpawnAuto()
     {
         willSpawnAuto = true;
+    }
+
+    public void SpawnSpecificBullet(int index)
+    {
+        if(index >= customDataPatterns.Length) { return; }
+        indexSC = index;
+        spawnCustomBullet();
+        return;
     }
 }

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d380e7b945dcbb34c91443ba5e8cb053, type: 3}
+  m_Name: GlassShards
+  m_EditorClassIdentifier: 
+  bulletResourceS: {fileID: 0}
+  bulletPoolTag: sakuyaShard_p
+  hasRandomAngles: 1
+  numScols: 10
+  fireRateSC: 0.2
+  minAngle: -20
+  maxAngle: 200
+  lifeTimeSC: 8
+  willAccelSC: 1
+  bulletSpeedSC: 0
+  dirSC: {x: 1, y: 0}
+  curveSC:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 9.797718
+      outSlope: 9.797718
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.016730996
+    - serializedVersion: 3
+      time: 0.15305924
+      value: 1.3213457
+      inSlope: 7.1537895
+      outSlope: 7.1537895
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 3
+      inSlope: 0.35586095
+      outSlope: 0.35586095
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5487036
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesDisplay;
 
     private bool killedReimu = false;
+
+    [Header("Handle Dialogue Flags")]
+    public Dialogue_Controller d_control;
     private void Awake()
     {
         if(GameManager.instance == null)
@@ -40,21 +43,22 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Dialogue_Controller d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
-        if (d_control != null) // avoid situation where it can't find Dialogue Canvas
-        {
-            d_control.startConvo();
-            d_control.dialoguePanel.SetActive(true);
-            d_control.character1.SetActive(true);
-            d_control.character2.SetActive(true);
+        /* code below to uncomment when 1st stage is ready */
+        //Dialogue_Controller d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
+        //if (d_control != null) // avoid situation where it can't find Dialogue Canvas
+        //{
+        //    d_control.startConvo();
+        //    d_control.dialoguePanel.SetActive(true);
+        //    d_control.character1.SetActive(true);
+        //    d_control.character2.SetActive(true);
 
-        }
+        //}
 
 
-        if (d_control == null)
-        {
-            Debug.Log("Can't find Dialogue Canvas");
-        }
+        //if (d_control == null)
+        //{
+        //    Debug.Log("Can't find Dialogue Canvas");
+        //}
 
         
     }
@@ -90,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            Dialogue_Controller d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
+            d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
             if(d_control != null) // avoid situation where it can't find Dialogue Canvas
             {
                 d_control.startConvo();
@@ -143,5 +147,15 @@ public class GameManager : MonoBehaviour
     {
         print("no lives left: killed Reimu");
         ReimuManager.SetActive(false);
+    }
+
+    ////////////////////////// HANDLE DIALOGUE //
+
+    public void StartSpecificConvo(int TconvoIndex)
+    {
+        print("started convo of choice");
+        d_control.TouhouConversationIndex = TconvoIndex;
+        d_control.currentConvo = d_control.TouhouConversations[TconvoIndex];
+        d_control.startConvo();
     }
 }

@@ -41,7 +41,10 @@ public class regularSpawnInfo : MonoBehaviour
     public int numberOfCustomBullets;
     public AnimationCurve accelerationCurveR;
     private Vector2 targetPosition;
-
+    
+    private Vector2[] maidPositions = { new Vector2(0, 0), new Vector2(-5.25f, -4.5f), new Vector2(0, -4.5f), new Vector2(5.25f, -4.5f)};
+    [SerializeField]
+    private int maidPosIndex = 0;
 
 
     // circumvent resizing array constantly by checking once, could do a void function that gets called within each attack pattern ********NOTE*************
@@ -61,12 +64,12 @@ public class regularSpawnInfo : MonoBehaviour
             numCol = newNumCol;
             rotationsR = new float[numCol];
         }
-        //if(Input.GetKeyDown(KeyCode.O))
-        //{
-        //    newNumCol++;
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           // StartCoroutine(MaidsLove());
+        }
 
-      
+
         // rn it'll spawn automatically
         spawnRateTimerR -= Time.deltaTime;
         if(willSpawnAuto == true)
@@ -201,21 +204,27 @@ public class regularSpawnInfo : MonoBehaviour
         mBullets = spawnHeart();
 
         // wait 2 seconds before all heart bullets pause
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
+        // show maids here
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
             mBullets[i].GetComponent<regularCustomBehavior>().bSpeed = 0;
             mBullets[i].GetComponent<regularCustomBehavior>().direction = Vector2.right;
         }
 
-        // there are many ways for the heart bullets to behave towards the player, will ask for suggestions, rn kinda looks pretty
-        
+        // three maid positions
+        Vector3 maidPos = maidPositions[maidPosIndex];
+        print(maidPos);
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
-            //yield return new WaitForSeconds(.005f);
-            // continuosly tracks Reimu
-            Vector2 dir = Reimu.transform.position - mBullets[i].transform.position;  // 11-17: this code tracks the player's position once
+           
+           
+            Vector3 dir = maidPos - mBullets[i].transform.position;
+            if(maidPosIndex == 0)
+            {
+                dir = this.transform.position - mBullets[i].transform.position;
+            }
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             mBullets[i].transform.rotation = Quaternion.Euler(0, 0, angle);
 
@@ -225,6 +234,7 @@ public class regularSpawnInfo : MonoBehaviour
 
         }
 
+        maidPosIndex = (maidPosIndex + 1) % maidPositions.Length;
         yield return null;
     }
 

@@ -43,11 +43,11 @@ public class sineSpawner : MonoBehaviour
     void Update()
     {
         spawnTimer -= Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1");
-            print(bulletsInScene.Length);
-        }
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    GameObject[] bulletsInScene = GameObject.FindGameObjectsWithTag("sineBullet1");
+        //    print(bulletsInScene.Length);
+        //}
        
 
 

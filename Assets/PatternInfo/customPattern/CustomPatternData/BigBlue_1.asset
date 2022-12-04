@@ -13,19 +13,37 @@ MonoBehaviour:
   m_Name: BigBlue_1
   m_EditorClassIdentifier: 
   bulletResourceS: {fileID: 0}
-  bulletPoolTag: 
+  bulletPoolTag: bigBlueSphere
   hasRandomAngles: 0
-  numScols: 0
-  fireRateSC: 0
+  numScols: 10
+  fireRateSC: 0.15
   minAngle: 0
-  maxAngle: 0
+  maxAngle: 360
   lifeTimeSC: 0
-  willAccelSC: 0
+  willAccelSC: 1
   bulletSpeedSC: 0
-  dirSC: {x: 0, y: 0}
+  dirSC: {x: 1, y: 0}
   curveSC:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2
+      value: 3
+      inSlope: 4.6204166
+      outSlope: 4.6204166
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.033584833
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

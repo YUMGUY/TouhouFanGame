@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SakuyaStage : MonoBehaviour
 {
@@ -15,7 +16,10 @@ public class SakuyaStage : MonoBehaviour
 
     [Header("bullet spawners and Time Variables")]
     public GameObject Sakuya_;
+    public SakuyaInfo Sakuya_Info;
     public specialCustomizationBullets personalSakuyaSpawner;
+    public specialCustomizationBullets wineSpawner1;
+    public specialCustomizationBullets wineSpawner2;
 
     public GameObject[] spawners;
     public GameObject pattern2Spawner;
@@ -25,13 +29,21 @@ public class SakuyaStage : MonoBehaviour
     public string knifeTag;
 
     [Header("Sakuya Bullet & Animation Variables")]
+    public regularSpawnInfo sakuyaMainSpawnerController;
+    public specialCustomizationBullets sakuyaMain_SC;
     public Animator sakuyaController;
     public GameObject ReimuTarget;
     private Vector2 targetPosition_;
 
+    [Header("Battle Flags")]
     private Coroutine battle;
+    private Coroutine maidPattern;
+    private Coroutine movePhase;
+    
+    [SerializeField]
     private bool startBattle = false;
-    private int phaseCounter = 0;
+    
+    //private int phaseCounter = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -45,24 +57,39 @@ public class SakuyaStage : MonoBehaviour
         // testing
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            MaidLovePattern();
+            print("stopped phase 1, can now start phase 2 safely");
+            StopCoroutine(battle);
+            StopCoroutine(maidPattern);
+            StopCoroutine(movePhase);
         }
 
         // testing wine anim and spit roast
         if (Input.GetKeyDown(KeyCode.T))
         {
-            
-            sakuyaController.SetTrigger("spitRoast");
+            print("Fling wine bottles");
+          //  sakuyaController.SetTrigger("spitRoast");
             
             wineBottle1.SetBool("fling", true);
             wineBottle2.SetBool("fling", true);
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
+            // rn manually call shots
             wineBottle1.SetTrigger("rightExist");
+            AnimationClip[] clips = wineBottle1.runtimeAnimatorController.animationClips;
+            foreach(AnimationClip clip in clips)
+            {
+                print(clip.length + ": seconds");
+            }
             wineBottle2.SetTrigger("leftExist");
             wineBottle1.SetBool("fling", false);
             wineBottle2.SetBool("fling", false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            print("started phase 3, wine");
+            StartCoroutine(SakuyaBattlePhase3());
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -73,36 +100,43 @@ public class SakuyaStage : MonoBehaviour
             UnfreezeAllBullets();
         }
 
-        // scuffed way to stop the 1st phase
+        // scuffed way to stop the 1st phase and start phase 2
         if (sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase1 == true)
         {
             print("stopped phase 1");
             StopCoroutine(battle);
             phase1 = false;
- 
+            phase2 = true;
+            Sakuya_Info.canBeDamagedByReimu = false; // stops incoming dmg????
             GameManager.instance.DisableAllBullets();
-            sakuyaInfoSource.currentSakuyaHp = .001f;
-            StartCoroutine(StartPhase2());
+            sakuyaInfoSource.currentSakuyaHp = .01f;
+            GameManager.instance.StartSpecificConvo(1);
+         //   StartCoroutine(StartPhase2Coroutine()); // replace this by calling Gamemanager conversation
           
         }
+        // 3rd phase started after stopping phase 2
         else if (sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase2 == true)
-        {   
-            print("stopped phase 2");
-            StopCoroutine(battle);
+        {
+            print("stopped phase 2, started phase 3");
+            Sakuya_Info.canBeDamagedByReimu = false;
+            StopCoroutine(battle); // necessary as it could keep on running
+            sakuyaInfoSource.currentSakuyaHp = .01f; // scuffed way to ensure next stage is executed only once and doesn't start one and end stage immediately
             phase2 = false;
+            phase3 = true;
             GameManager.instance.DisableAllBullets();
-           // battle = StartCoroutine(SakuyaBattle());
-           // ++phaseCounter;
+            // battle = StartCoroutine(SakuyaBattlePhase3());
+
         }
-        
+        // else if
+
 
 
     }
 
     // ////////////////////////////////////////////////////// FIRST PATTERN " COMPLIMENTS TO THE CHEF "  //////////////////
-    public void MaidLovePattern()
+    public void MaidLovePattern() // get rid of, no more animation controller for 1st phase, only coroutine
     {
-        sakuyaController.SetTrigger("heartPattern");
+       // sakuyaController.SetTrigger("heartPattern");
     }
 
     // control flow of the pattern
@@ -144,7 +178,6 @@ public class SakuyaStage : MonoBehaviour
         
         yield return null;
     }
-    //////////////////////////////////////////////////////////////////////////////////
 
 
     /* ///////////////////////////// 2ND PATTERN " SPIT ROAST " //////////////////////////////
@@ -159,6 +192,7 @@ public class SakuyaStage : MonoBehaviour
 
     public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
     {
+        // play sound effect, yield for time of sound effect
 
         Color orig = ReimuTarget.GetComponent<SpriteRenderer>().color; // for debugging purposes
 
@@ -179,7 +213,6 @@ public class SakuyaStage : MonoBehaviour
         {
             for (int i = 0; i < 10; ++i)
             {
-                
                 GameObject bullet = Instantiate(prefabBullet);
 
                 // optimizable
@@ -201,12 +234,10 @@ public class SakuyaStage : MonoBehaviour
                 encircleCollection[(k * 10) + i] = bullet;
             }
 
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.25f);
         }
 
-
         yield return new WaitForSeconds(1f);
-
 
         UnfreezeAllBullets();
         print("Time has resumed");
@@ -224,9 +255,6 @@ public class SakuyaStage : MonoBehaviour
             }
             yield return new WaitForSeconds(.5f);
         }
-
-       // StartCoroutine(CirclingBullets());
-
         yield return null;
     }
     public IEnumerator CirclingBullets()
@@ -336,26 +364,28 @@ public class SakuyaStage : MonoBehaviour
 
 
     ////////////////// CODE FOR CONTROLLING FLOW OF BATTLE////////////////////////////////////////////////////////////////
-   public IEnumerator SakuyaBattle()
+   public IEnumerator SakuyaBattle() // PHASE 1
     {
         print("started battle: so hungry");
         while(phase1 == true)
         {
-           
-            MaidLovePattern();
-            yield return new WaitForSeconds(3f);
-            // Sakuya Spawning Bullets
-            for(int i = 0; i < 5; ++i)
-            {
-                personalSakuyaSpawner.indexSC = 4;
-               
-                personalSakuyaSpawner.spawnCustomBullet();
-                yield return new WaitForSeconds(personalSakuyaSpawner.GetBulletData().fireRateSC);
-            }
 
+            // MaidLovePattern();
+
+            // substitute for animation triggering
+            maidPattern = StartCoroutine(sakuyaMainSpawnerController.MaidsLove());
+
+            // put some pattern here
+            for(int i = 0; i < 3; ++i)
+            {
+                sakuyaMain_SC.indexSC = i;
+                yield return new WaitForSeconds(sakuyaMain_SC.GetBulletData().fireRateSC);
+                sakuyaMain_SC.spawnCustomBullet();
+            }
+            yield return (maidPattern);
             // move to function
-            float randNumX = Random.Range(-1, 2);
-            float randNumY = Random.Range(0, 2);
+            float randNumX = Random.Range(-2, 3);
+            float randNumY = Random.Range(-1, 3);
             Vector3 newPosition = Sakuya_.transform.position + new Vector3(randNumX, randNumY, 0);
             if (Sakuya_.transform.position.y > 3f && randNumY > 0)
             {
@@ -365,18 +395,36 @@ public class SakuyaStage : MonoBehaviour
             {
                 newPosition = new Vector3(2, 2, 0); // temporary default positions
             }
-           
-            StartCoroutine(sakuyaInfoSource.MoveToLocation(newPosition));
+            movePhase = StartCoroutine(sakuyaInfoSource.MoveToLocation(newPosition));
+            
             yield return new WaitForSeconds(3f);
             yield return null;
         }
+        print("finished phase 1");
+        // call 
  
     }
 
+    // interconnected with StartPhase2
+    public void StartPhase1()
+    {   
+        if(startBattle == false) // start once for Sakuya
+        {
+            print("started phase 1");
+            battle = StartCoroutine(SakuyaBattle());
+            GameManager.instance.GetComponent<AudioSource>().clip = BattleStageMusic;
+            GameManager.instance.GetComponent<AudioSource>().Play();
+            GameManager.instance.GetComponent<AudioSource>().loop = true;
+            Sakuya_Info.canBeDamagedByReimu = true;
+            startBattle = true;
+            
+        }
+    }
 
-    public IEnumerator StartPhase2()
+    public IEnumerator StartPhase2Coroutine()
     {
         yield return new WaitForFixedUpdate();
+        StartCoroutine(sakuyaInfoSource.MoveToLocation(new Vector2(0, 2f)));
         print("stage 2 started");
         sakuyaInfoSource.canBeDamagedByReimu = false;
         yield return (StartCoroutine(sakuyaInfoSource.NewMaxHp(800f)));
@@ -384,31 +432,21 @@ public class SakuyaStage : MonoBehaviour
         sakuyaInfoSource.canBeDamagedByReimu = true;
         battle = StartCoroutine(SakuyaBattlePhase2());
         yield return null;
-        
+
     }
-    // interconnected with StartPhase2
-    public void StartPhase1()
-    {   
-        if(startBattle == false)
-        {
-            battle = StartCoroutine(SakuyaBattle());
-            GameManager.instance.GetComponent<AudioSource>().clip = BattleStageMusic;
-            GameManager.instance.GetComponent<AudioSource>().Play();
-            startBattle = true;
-        }
-       
-    }
+
     public IEnumerator SakuyaBattlePhase2()
     {
-        StartCoroutine(sakuyaInfoSource.MoveToLocation(new Vector2(0, 2f)));
         print("phase 2 started");
+
+        // add a wait for 1.25 second after convo ends
         while(phase2 == true)
         {
             sakuyaController.SetTrigger("spitRoast");
             yield return null;
 
 
-            yield return new WaitForSeconds(sakuyaController.GetCurrentAnimatorStateInfo(0).length + 6f);
+            yield return new WaitForSeconds(sakuyaController.GetCurrentAnimatorStateInfo(0).length + 5f);
 
          
             personalSakuyaSpawner.indexSC = 5;
@@ -421,13 +459,66 @@ public class SakuyaStage : MonoBehaviour
             
             
         }
-        
+        print("phase 2 stopped");
         yield return null;
     }
 
-    public IEnumerator StartPhase3()
+    public IEnumerator SakuyaBattlePhase3()
     {
+        // show wine bottles , yield  accounting wine bottle animation length, and then shoot
+        // rn manually call shots
+      //  int random = 0;
+
+
+        // while true
+
+
+        // currently 1 second long
+        wineBottle1.SetTrigger("rightExist");
+        wineBottle2.SetTrigger("leftExist");
+        wineBottle1.SetBool("fling", false);
+        wineBottle2.SetBool("fling", false);
+
+      
+        yield return new WaitForSeconds(.9f);
+        print("now shoot");
+        //wineSpawner1.willSpawnAuto = true;
+        //wineSpawner2.willSpawnAuto = true;
+
+        // also set spiraling
+        for(int i = 0; i < 2; ++i)
+        {
+            for(int j = 0; j < 3; ++j)
+            {
+                //random = Random.Range(0, 2); // 0 for no random angles, 1 for random angles;
+               // if (random == 0) {
+                    wineSpawner1.SpawnSpecificBullet(0);
+                    wineSpawner2.SpawnSpecificBullet(0);
+                //}
+                //else { 
+                //    wineSpawner1.SpawnSpecificBullet(2);
+                //    wineSpawner2.SpawnSpecificBullet(2);
+                //}
+                wineSpawner1.indexSC = 1;
+                wineSpawner2.indexSC = 1;
+                yield return new WaitForSeconds(wineSpawner1.GetBulletData().fireRateSC);
+                wineSpawner1.spawnCustomBullet();
+                wineSpawner2.spawnCustomBullet();
+
+            }
+
+            yield return new WaitForSeconds(1f);
+        }
+
+        // yield seconds
+
+
+        // fling wine bottles, 2.997 seconds long
+
+
+        yield return new WaitForSeconds(2.5f);
         yield return null;
+       
     }
 
 }

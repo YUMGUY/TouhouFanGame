@@ -15,6 +15,9 @@ TagManager:
   - regularBlue
   - reimu_Bullet
   - bigBlueSphere
+  - sakuyaShard_p
+  - knifePool
+  - medBlue
   layers:
   - Default
   - TransparentFX
