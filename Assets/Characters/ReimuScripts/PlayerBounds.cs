@@ -10,6 +10,11 @@ public class PlayerBounds : MonoBehaviour
     private float objectWidth;
     private float objectHeight;
 
+    private void Awake()
+    {
+        MainCamera = Camera.main;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

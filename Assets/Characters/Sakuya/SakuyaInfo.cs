@@ -10,6 +10,7 @@ public class SakuyaInfo : MonoBehaviour
     public float maxSakuyaHp;
     public bool canBeDamagedByReimu;
     public SakuyaStage phaseController;
+    public ReimuInfo reimuConnection;
 
     [SerializeField]
     private bool movingInBattle;
@@ -37,8 +38,8 @@ public class SakuyaInfo : MonoBehaviour
         {
             if (collision.CompareTag("reimu_Bullet") && canBeDamagedByReimu == true)
             {
-                currentSakuyaHp -= 5f;
-                Destroy(collision.gameObject);
+                currentSakuyaHp -= reimuConnection.reimuDmg;
+                collision.gameObject.SetActive(false);
             }
         }
        

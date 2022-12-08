@@ -39,6 +39,7 @@ public class SakuyaStage : MonoBehaviour
     private Coroutine battle;
     private Coroutine maidPattern;
     private Coroutine movePhase;
+   // private Coroutine spitRoastCoroutine;
     
     [SerializeField]
     private bool startBattle = false;
@@ -88,8 +89,7 @@ public class SakuyaStage : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            print("started phase 3, wine");
-            StartCoroutine(SakuyaBattlePhase3());
+            GameManager.instance.StartSpecificConvo(2);
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -123,11 +123,25 @@ public class SakuyaStage : MonoBehaviour
             sakuyaInfoSource.currentSakuyaHp = .01f; // scuffed way to ensure next stage is executed only once and doesn't start one and end stage immediately
             phase2 = false;
             phase3 = true;
+            StopAllCoroutines();
             GameManager.instance.DisableAllBullets();
-            // battle = StartCoroutine(SakuyaBattlePhase3());
+            battle = StartCoroutine(SakuyaBattlePhase3());
 
         }
-        // else if
+        else if(sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase3 == true && phase2 == false && phase1 == false)
+        {
+            print("you defeated Sakuya");
+            phase3 = false;
+            GameManager.instance.DisableAllBullets();
+            StopCoroutine(battle);
+
+            GameManager.instance.StartSpecificConvo(2);
+
+            // destroy wine bottles
+            // trigger death animation
+
+            // GameManager kills Sakuya
+        }
 
 
 
@@ -187,7 +201,7 @@ public class SakuyaStage : MonoBehaviour
     */
     public void SpitRoast()
     {
-        StartCoroutine(SurroundTimeStop(0, 0, .1f));
+        StartCoroutine(SurroundTimeStop(0, 0, .1f)); // store this into coroutine that can be stopped
     }
 
     public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
@@ -318,6 +332,7 @@ public class SakuyaStage : MonoBehaviour
         foreach (ReimuBulletInfo bullet in reimuBullets)
         {
             bullet.RbulletSpeed = 0;
+            bullet.timeStopped = true;
         }
     }
     public void UnfreezeAllBullets()
@@ -346,6 +361,7 @@ public class SakuyaStage : MonoBehaviour
         foreach (ReimuBulletInfo bullet in reimuBullets)
         {
             bullet.RbulletSpeed = 10;
+            bullet.timeStopped = false;
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -465,60 +481,75 @@ public class SakuyaStage : MonoBehaviour
 
     public IEnumerator SakuyaBattlePhase3()
     {
+        print("stage 3 started");
+        yield return (StartCoroutine(sakuyaInfoSource.NewMaxHp(900f)));
+        sakuyaInfoSource.canBeDamagedByReimu = true;
+        yield return new WaitForSeconds(1f); // act as buffer
         // show wine bottles , yield  accounting wine bottle animation length, and then shoot
         // rn manually call shots
-      //  int random = 0;
+        //  int random = 0;
 
-
-        // while true
-
-
-        // currently 1 second long
-        wineBottle1.SetTrigger("rightExist");
-        wineBottle2.SetTrigger("leftExist");
-        wineBottle1.SetBool("fling", false);
-        wineBottle2.SetBool("fling", false);
-
-      
-        yield return new WaitForSeconds(.9f);
-        print("now shoot");
-        //wineSpawner1.willSpawnAuto = true;
-        //wineSpawner2.willSpawnAuto = true;
-
-        // also set spiraling
-        for(int i = 0; i < 2; ++i)
+        while(true)
         {
-            for(int j = 0; j < 3; ++j)
+            // currently 1 second long
+            wineBottle1.SetTrigger("rightExist");
+            wineBottle2.SetTrigger("leftExist");
+            wineBottle1.SetBool("fling", false);
+            wineBottle2.SetBool("fling", false);
+
+
+            yield return new WaitForSeconds(.9f);
+            print("now shoot");
+
+            // also set spiraling
+            for (int i = 0; i < 2; ++i)
             {
-                //random = Random.Range(0, 2); // 0 for no random angles, 1 for random angles;
-               // if (random == 0) {
+                for (int j = 0; j < 3; ++j)
+                {
+                    //random = Random.Range(0, 2); // 0 for no random angles, 1 for random angles;
+                    // if (random == 0) {
                     wineSpawner1.SpawnSpecificBullet(0);
                     wineSpawner2.SpawnSpecificBullet(0);
-                //}
-                //else { 
-                //    wineSpawner1.SpawnSpecificBullet(2);
-                //    wineSpawner2.SpawnSpecificBullet(2);
-                //}
-                wineSpawner1.indexSC = 1;
-                wineSpawner2.indexSC = 1;
-                yield return new WaitForSeconds(wineSpawner1.GetBulletData().fireRateSC);
-                wineSpawner1.spawnCustomBullet();
-                wineSpawner2.spawnCustomBullet();
+                    //}
+                    //else { 
+                    //    wineSpawner1.SpawnSpecificBullet(2);
+                    //    wineSpawner2.SpawnSpecificBullet(2);
+                    //}
+                    wineSpawner1.indexSC = 1;
+                    wineSpawner2.indexSC = 1;
+                    yield return new WaitForSeconds(wineSpawner1.GetBulletData().fireRateSC);
+                    wineSpawner1.spawnCustomBullet();
+                    wineSpawner2.spawnCustomBullet();
 
+                }
+
+                yield return new WaitForSeconds(1f);
             }
 
-            yield return new WaitForSeconds(1f);
+            // yield seconds
+            yield return new WaitForSeconds(.5f);
+            Vector2 newPos = generateRandomPosition();
+            movePhase = StartCoroutine(sakuyaInfoSource.MoveToLocation(newPos));
+            wineBottle1.SetBool("fling", true);
+            wineBottle2.SetBool("fling", true);
+            // fling wine bottles, 2.997 seconds long
+
+
+            print("reset");
+            yield return new WaitForSeconds(4f); // 4 - 2.997
+            yield return null;
         }
-
-        // yield seconds
-
-
-        // fling wine bottles, 2.997 seconds long
+    }
 
 
-        yield return new WaitForSeconds(2.5f);
-        yield return null;
-       
+    public Vector2 generateRandomPosition()
+    {
+
+        float newX = Mathf.Clamp(transform.position.x + Random.Range(-2f, 2f), -6f, 6f);
+        float newY = Mathf.Clamp(transform.position.y + Random.Range(-2f, 2f), 1.25f, 2.95f);
+        Vector2 newPosition = new Vector2(newX, newY);
+
+        return newPosition;
     }
 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class Dialogue_Controller : MonoBehaviour
 {
     public float typingSpeed;
@@ -135,7 +135,16 @@ public class Dialogue_Controller : MonoBehaviour
             character2.SetActive(false);
 
             convoStarted = false;
-            StartSakuyaPhase(TouhouConversationIndex);
+
+            if(SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                StartSakuyaPhase(TouhouConversationIndex);
+            }
+            else if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+
+            }
+            
             //sakuya_stage.StartPhase1(); // make switch based on build index so that stages dialogue ends, should be called in GameManager
             
         }
@@ -180,9 +189,16 @@ public class Dialogue_Controller : MonoBehaviour
                 break;
             case 2:
                 // start conversation after phase 3 ended
+                // move onto next scene
+                SceneManager.LoadScene(1);
                 break;
    
         }
         return;
+    }
+
+    public void YoumuPhaseSelector(int phaseIndex)
+    {
+         
     }
 }

@@ -18,6 +18,7 @@ TagManager:
   - sakuyaShard_p
   - knifePool
   - medBlue
+  - ReimuBulletPool
   layers:
   - Default
   - TransparentFX

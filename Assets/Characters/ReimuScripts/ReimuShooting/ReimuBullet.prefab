@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RbulletSpeed: 10
+  bulletDMG: 0
+  reimuBulletLF: 2.1
 --- !u!212 &6318406407166545198
 SpriteRenderer:
   m_ObjectHideFlags: 0

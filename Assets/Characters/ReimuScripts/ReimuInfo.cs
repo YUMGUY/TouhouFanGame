@@ -5,6 +5,8 @@ using UnityEngine;
 public class ReimuInfo : MonoBehaviour
 {
     [Header("Damage System")]
+    public simpleBulletPool reimuBulletPool;
+    public simpleBulletPool reimuBulletPool2;
     public GameObject reimuBullet;
     public float fireRate_Reimu;
     public float fireCooldown;
@@ -17,10 +19,13 @@ public class ReimuInfo : MonoBehaviour
     public float dmgTimer;
     public float collisionCoolDown;
 
-   
-    
 
 
+
+    private void Awake()
+    {
+       // reimuBulletPool = GameObject.FindGameObjectWithTag("ReimuBulletPool").GetComponent<simpleBulletPool>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -59,9 +64,13 @@ public class ReimuInfo : MonoBehaviour
     // add timer
     public void ShootBullets()
     {
-        GameObject b1 = Instantiate(reimuBullet);
-        GameObject b2 = Instantiate(reimuBullet);
+        GameObject b1 = reimuBulletPool.GetPooledObject();
+        GameObject b2 = reimuBulletPool2.GetPooledObject();
         b1.transform.position = firingPos_1.position;
         b2.transform.position = firingPos_2.position;
+        b1.GetComponent<ReimuBulletInfo>().RbulletSpeed = 10f;
+        b2.GetComponent<ReimuBulletInfo>().RbulletSpeed = 10f;
+        b1.SetActive(true);
+        b2.SetActive(true);
     }
 }

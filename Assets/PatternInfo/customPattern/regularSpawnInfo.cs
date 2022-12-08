@@ -215,7 +215,7 @@ public class regularSpawnInfo : MonoBehaviour
 
         // three maid positions
         Vector3 maidPos = maidPositions[maidPosIndex];
-        print(maidPos);
+       // print(maidPos);
         for(int i = 0; i < numberOfCustomBullets; ++i)
         {
            

@@ -5,6 +5,9 @@ using UnityEngine;
 public class YoumuInfo : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public float YoumuHP;
+    
     void Start()
     {
         
@@ -15,4 +18,8 @@ public class YoumuInfo : MonoBehaviour
     {
         
     }
+
+
+
+    // call GameManager.instance.StartSpecificConvo(0);
 }
