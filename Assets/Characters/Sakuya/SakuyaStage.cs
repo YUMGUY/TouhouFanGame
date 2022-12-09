@@ -56,49 +56,49 @@ public class SakuyaStage : MonoBehaviour
     void Update()
     {
         // testing
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            print("stopped phase 1, can now start phase 2 safely");
-            StopCoroutine(battle);
-            StopCoroutine(maidPattern);
-            StopCoroutine(movePhase);
-        }
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    print("stopped phase 1, can now start phase 2 safely");
+        //    StopCoroutine(battle);
+        //    StopCoroutine(maidPattern);
+        //    StopCoroutine(movePhase);
+        //}
 
-        // testing wine anim and spit roast
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            print("Fling wine bottles");
-          //  sakuyaController.SetTrigger("spitRoast");
+        //// testing wine anim and spit roast
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    print("Fling wine bottles");
+        //  //  sakuyaController.SetTrigger("spitRoast");
             
-            wineBottle1.SetBool("fling", true);
-            wineBottle2.SetBool("fling", true);
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            // rn manually call shots
-            wineBottle1.SetTrigger("rightExist");
-            AnimationClip[] clips = wineBottle1.runtimeAnimatorController.animationClips;
-            foreach(AnimationClip clip in clips)
-            {
-                print(clip.length + ": seconds");
-            }
-            wineBottle2.SetTrigger("leftExist");
-            wineBottle1.SetBool("fling", false);
-            wineBottle2.SetBool("fling", false);
-        }
+        //    wineBottle1.SetBool("fling", true);
+        //    wineBottle2.SetBool("fling", true);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    // rn manually call shots
+        //    wineBottle1.SetTrigger("rightExist");
+        //    AnimationClip[] clips = wineBottle1.runtimeAnimatorController.animationClips;
+        //    foreach(AnimationClip clip in clips)
+        //    {
+        //        print(clip.length + ": seconds");
+        //    }
+        //    wineBottle2.SetTrigger("leftExist");
+        //    wineBottle1.SetBool("fling", false);
+        //    wineBottle2.SetBool("fling", false);
+        //}
 
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            GameManager.instance.StartSpecificConvo(2);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            FreezeAllBullets();
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UnfreezeAllBullets();
-        }
+        //if(Input.GetKeyDown(KeyCode.R))
+        //{
+        //    GameManager.instance.StartSpecificConvo(2);
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    FreezeAllBullets();
+        //}
+        //if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    UnfreezeAllBullets();
+        //}
 
         // scuffed way to stop the 1st phase and start phase 2
         if (sakuyaInfoSource.currentSakuyaHp <= 0.0f && phase1 == true)

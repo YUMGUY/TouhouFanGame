@@ -79,7 +79,9 @@ public class sineSpawner : MonoBehaviour
         // setting angle later in DistributedRotations, figure out how to resize array accordingly, maybe old bulletsize, new bulletsize, 
         // check if new bullet size > old bullet size, then make rotation = new?
         float angle = 0;
-        float increment = ((maxRotation - minRotation) / numberOfBulletColumns);
+        float increment = 0;
+        if(numberOfBulletColumns == 1) { increment = minRotation; }
+        increment = ((maxRotation - minRotation) / (numberOfBulletColumns - 1));
         for (int i = 0; i < numberOfBulletColumns; ++i)
         {
             GameObject bullet1 = bulletPoolSine.GetComponent<simpleBulletPool>().GetPooledObject();

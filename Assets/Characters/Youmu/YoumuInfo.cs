@@ -1,25 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class YoumuInfo : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Header("Health Management")]
+    public Image YoumuHPBar;
+    public float currentYoumuHp;
+    public float maxYoumuHp;
+    public bool YoumucanBeDamagedByReimu;
+    public ReimuInfo reimuConnectiontoYoumu;
 
-    public float YoumuHP;
-    
+    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        YCalculateHp();
+
     }
 
+    private void YCalculateHp()
+    {
+        YoumuHPBar.fillAmount = currentYoumuHp / maxYoumuHp;
+    }
 
+    public IEnumerator YNewMaxHp(float newMax)
+    {
 
-    // call GameManager.instance.StartSpecificConvo(0);
+        maxYoumuHp = newMax;
+        float startingHp = currentYoumuHp;
+        float time1 = 0;
+        float duration = 2.0f;
+        while (time1 <= duration)
+        {
+            currentYoumuHp = Mathf.Lerp(startingHp, maxYoumuHp, time1 / duration);
+            time1 += Time.deltaTime;
+            yield return null;
+        }
+
+        print("refilled hp");
+
+        yield return null;
+    }
+
+    public IEnumerator YMoveToLocation(Vector2 newLocation)
+    {
+       // movingInBattle = true;
+        float time1_ = 0f;
+        float duration = 1.5f;
+        Vector3 startingPosition = transform.position;
+        while (time1_ < duration)
+        {
+            transform.position = Vector3.Lerp(startingPosition, newLocation, time1_ / duration);
+            time1_ += Time.deltaTime;
+            yield return null;
+        }
+
+      //  movingInBattle = false;
+        print("finished moving");
+        yield return null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("reimu_Bullet") && YoumucanBeDamagedByReimu)
+        {
+            GameManager.instance.IncreaseHunger(2);
+            currentYoumuHp -= reimuConnectiontoYoumu.reimuDmg;
+            collision.gameObject.SetActive(false);
+        }
+    }
+
+    
 }

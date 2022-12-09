@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Handle Dialogue Flags")]
     public Dialogue_Controller d_control;
+    public bool startedSakuya;
+    public bool startedYoumu;
     private void Awake()
     {
         if(GameManager.instance == null)
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour
         //}
 
         
+        
     }
 
     // Update is called once per frame
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
             // set trigger Reimu Animation //
             print("now power up");
             IncreaseMaxHungerPoints();
+            PowerUpReimu();
         }
         livesDisplay.text = "Lives: " + livesStage.ToString();
 
@@ -106,12 +110,24 @@ public class GameManager : MonoBehaviour
             }
             
         }
+
+        if(SceneManager.GetActiveScene().buildIndex == 1 && startedYoumu == false)
+        {
+            // start it up
+            // start coroutine
+
+            startedYoumu = true;
+        }
     }
 
     /* hunger points system */
     private void IncreaseMaxHungerPoints()
     {
         maxHungerPoints += 50;
+    }
+    public void IncreaseHunger(int multiplier)
+    {
+        currentHungerPoints += (multiplier * 1);
     }
     private void SetHungerDisplay()
     {
@@ -125,7 +141,12 @@ public class GameManager : MonoBehaviour
     {
         print("disabled all bullets");
         regularCustomBehavior[] allregularBullets = GameObject.FindObjectsOfType<regularCustomBehavior>();
-        foreach(regularCustomBehavior bullet in allregularBullets)
+        sineWaveInfo[] allsineBullets = GameObject.FindObjectsOfType<sineWaveInfo>();
+        foreach (regularCustomBehavior bullet in allregularBullets)
+        {
+            bullet.gameObject.SetActive(false);
+        }
+        foreach (sineWaveInfo bullet in allsineBullets)
         {
             bullet.gameObject.SetActive(false);
         }
@@ -147,6 +168,7 @@ public class GameManager : MonoBehaviour
     {
         print("no lives left: killed Reimu");
         ReimuManager.SetActive(false);
+        // set gameover screen
     }
 
     ////////////////////////// HANDLE DIALOGUE //

@@ -49,12 +49,16 @@ public class ReimuInfo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(dmgTimer <= 0 && canBeDamaged == true) // ADD HUNGER BULLET COLLISION, ADD POINTS AND audioclip
+        if(dmgTimer <= 0 && canBeDamaged == true && !other.CompareTag("HungerPointBullet")) // ADD HUNGER BULLET COLLISION, ADD POINTS AND audioclip
         {
             print("Reimu Collided");
             dmgTimer = collisionCoolDown;
             
             GameManager.instance.DecreaseLife();
+        }
+        else if(other.CompareTag("HungerPointBullet"))
+        {
+            GameManager.instance.IncreaseHunger(20);
         }
        
 

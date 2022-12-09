@@ -31,6 +31,8 @@ public class regularSpawnInfo : MonoBehaviour
     public float minRotationR;
     public float maxRotationR;
     public float[] rotationsR;
+    public bool spawnerRotating;
+    public float rotateSpeed;
 
 
     [Header("Custom Variables")]
@@ -69,6 +71,11 @@ public class regularSpawnInfo : MonoBehaviour
            // StartCoroutine(MaidsLove());
         }
 
+        if(spawnerRotating == true)
+        {
+            transform.Rotate(rotateSpeed * Vector3.forward * Time.deltaTime);
+        }
+      
 
         // rn it'll spawn automatically
         spawnRateTimerR -= Time.deltaTime;
@@ -80,6 +87,7 @@ public class regularSpawnInfo : MonoBehaviour
                 spawnRateTimerR = spawnRateR;
             }
         }
+
 
         //else if(makeHeart == true)
         //{

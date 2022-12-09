@@ -19,6 +19,7 @@ TagManager:
   - knifePool
   - medBlue
   - ReimuBulletPool
+  - HungerPointBullet
   layers:
   - Default
   - TransparentFX

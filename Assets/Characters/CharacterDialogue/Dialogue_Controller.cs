@@ -11,6 +11,7 @@ public class Dialogue_Controller : MonoBehaviour
     public TextMeshProUGUI namePanel;
     
     public SakuyaStage sakuya_stage;
+    public YoumuStage youmu_stage;
 
     [Header("Conversation Scene Info")]
 
@@ -142,7 +143,7 @@ public class Dialogue_Controller : MonoBehaviour
             }
             else if(SceneManager.GetActiveScene().buildIndex == 1)
             {
-
+                YoumuPhaseSelector(TouhouConversationIndex);
             }
             
             //sakuya_stage.StartPhase1(); // make switch based on build index so that stages dialogue ends, should be called in GameManager
@@ -199,6 +200,21 @@ public class Dialogue_Controller : MonoBehaviour
 
     public void YoumuPhaseSelector(int phaseIndex)
     {
-         
+        switch (phaseIndex)
+        {
+            case 0: // start phase 1
+                youmu_stage.StartYoumuPhase1();
+                break;
+            case 1:
+                print("phase 2 should start");
+                youmu_stage.StartYoumuPhase2();
+                break;
+            case 2:
+                // victory screen
+                print("phase 3 should start");
+                break;
+
+        }
+        return;
     }
 }
