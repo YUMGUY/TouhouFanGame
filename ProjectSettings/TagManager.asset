@@ -20,6 +20,8 @@ TagManager:
   - medBlue
   - ReimuBulletPool
   - HungerPointBullet
+  - medCyan
+  - medYellow
   layers:
   - Default
   - TransparentFX

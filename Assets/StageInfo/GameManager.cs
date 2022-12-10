@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public int currentHungerPoints;
     public int maxHungerPoints;
     public int livesStage;
+    public AnimationCurve pointCurve;
+    private int pointIndex;
 
     [Header("Display Scores/Points/Lives")]
     public TextMeshProUGUI hungerPointsDisplay;
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
     public Dialogue_Controller d_control;
     public bool startedSakuya;
     public bool startedYoumu;
+
+    public AudioClip YoumuTheme;
     private void Awake()
     {
         if(GameManager.instance == null)
@@ -78,10 +82,10 @@ public class GameManager : MonoBehaviour
             KillReimu();
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ++currentHungerPoints;
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    ReimuManager.GetComponent<Animator>().SetTrigger("PowerUp");
+        //}
         if(currentHungerPoints >= maxHungerPoints)
         {
             // Reimu is temp powered up //
@@ -110,12 +114,19 @@ public class GameManager : MonoBehaviour
             }
             
         }
-
-        if(SceneManager.GetActiveScene().buildIndex == 1 && startedYoumu == false)
+        if (SceneManager.GetActiveScene().buildIndex == 0 && startedSakuya == false)
         {
             // start it up
             // start coroutine
+         //   d_control.startConvo();
+            startedSakuya = true;
+        }
 
+        if (SceneManager.GetActiveScene().buildIndex == 1 && startedYoumu == false)
+        {
+            // start it up
+            // start coroutine
+            d_control.startConvo();
             startedYoumu = true;
         }
     }
@@ -123,7 +134,14 @@ public class GameManager : MonoBehaviour
     /* hunger points system */
     private void IncreaseMaxHungerPoints()
     {
+        if(pointIndex >= 10)
+        {
+            maxHungerPoints += Mathf.RoundToInt(pointCurve.Evaluate(10));
+            return;
+        }
         maxHungerPoints += 50;
+        maxHungerPoints += Mathf.RoundToInt(pointCurve.Evaluate(pointIndex));
+        pointIndex += 1;
     }
     public void IncreaseHunger(int multiplier)
     {
@@ -155,7 +173,13 @@ public class GameManager : MonoBehaviour
     /* lives and power system*/
     public void PowerUpReimu()
     {
+        ReimuManager.GetComponent<AudioSource>().PlayOneShot(ReimuManager.GetComponent<ReimuInfo>().ReimuPoweredUp);
+        ReimuManager.GetComponent<Animator>().SetTrigger("PowerUp");
+    }
 
+    public void PowerDownReimu()
+    {
+        ReimuManager.GetComponent<ReimuInfo>().fireRate_Reimu = .1f;
     }
 
     public void DecreaseLife()

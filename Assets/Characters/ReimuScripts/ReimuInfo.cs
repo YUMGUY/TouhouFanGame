@@ -18,6 +18,12 @@ public class ReimuInfo : MonoBehaviour
     public bool canShoot;
     public float dmgTimer;
     public float collisionCoolDown;
+    public AudioSource ReimuFeedback;
+    public AudioClip ReimuShoot;
+    public AudioClip ReimuDamaged;
+    public AudioClip ReimuIncreaseHunger;
+    public AudioClip ReimuPoweredUp;
+    public Animator ReimuVisuals;
 
 
 
@@ -42,6 +48,7 @@ public class ReimuInfo : MonoBehaviour
         {
             ShootBullets();
             fireRate_Reimu = fireCooldown;
+            ReimuFeedback.PlayOneShot(ReimuShoot);
         }
         dmgTimer -= Time.deltaTime;
 
@@ -55,10 +62,16 @@ public class ReimuInfo : MonoBehaviour
             dmgTimer = collisionCoolDown;
             
             GameManager.instance.DecreaseLife();
+            ReimuFeedback.PlayOneShot(ReimuDamaged, 1f);
+            ReimuVisuals.SetTrigger("lostLife");
+            // start hit anim with sound
+
         }
         else if(other.CompareTag("HungerPointBullet"))
         {
             GameManager.instance.IncreaseHunger(20);
+            ReimuFeedback.PlayOneShot(ReimuIncreaseHunger);
+            other.gameObject.SetActive(false);
         }
        
 
@@ -76,5 +89,28 @@ public class ReimuInfo : MonoBehaviour
         b2.GetComponent<ReimuBulletInfo>().RbulletSpeed = 10f;
         b1.SetActive(true);
         b2.SetActive(true);
+    }
+
+
+    public void SetNoDamage()
+    {
+        canBeDamaged = false;
+    }
+
+    public void SetDamage()
+    {
+        canBeDamaged = true;
+    }
+
+    public void PowerReimuUp()
+    {
+        fireRate_Reimu = .05f;
+        fireCooldown = .05f;
+    }
+
+    public void PowerReimuDown()
+    {
+        fireRate_Reimu = .1f;
+        fireCooldown = .1f;
     }
 }

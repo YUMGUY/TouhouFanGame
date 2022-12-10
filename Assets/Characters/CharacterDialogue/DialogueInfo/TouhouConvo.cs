@@ -16,6 +16,7 @@ public class TouhouConvo : ScriptableObject
         [TextArea(2, 10)]
         public string convoText;
         public Sprite currentSpriteEmotion;
+        public TouhouSpeaker character;
         public Action currentAction;
 
         [SerializeField]

@@ -126,6 +126,7 @@ public class regularSpawnInfo : MonoBehaviour
 
                 if(accelBullets == true)
                 {
+                    rBullet.GetComponent<regularCustomBehavior>().timeAcceleration = 0;
                     rBullet.GetComponent<regularCustomBehavior>().willAccel = true;
                     rBullet.GetComponent<regularCustomBehavior>().speedCurve = accelerationCurveR;
                 }

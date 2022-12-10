@@ -49,11 +49,10 @@ public class YoumuInfo : MonoBehaviour
         yield return null;
     }
 
-    public IEnumerator YMoveToLocation(Vector2 newLocation)
+    public IEnumerator YMoveToLocation(Vector2 newLocation, float duration)
     {
        // movingInBattle = true;
         float time1_ = 0f;
-        float duration = 1.5f;
         Vector3 startingPosition = transform.position;
         while (time1_ < duration)
         {

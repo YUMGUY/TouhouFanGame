@@ -21,6 +21,10 @@ public class sineSpawner : MonoBehaviour
     public float spawnTimer;
     public float spawnRate;
 
+    [Header("Acceleration Variables")]
+    public bool sineSpeedAcceleration;
+    public AnimationCurve sineSpeedC;
+
 
     [Header("Rotations Info")]
     public bool customRotations;
@@ -104,6 +108,12 @@ public class sineSpawner : MonoBehaviour
                 bullet1.GetComponent<sineWaveInfo>().lifeTime = lifeTimeM;
                 bullet1.GetComponent<sineWaveInfo>().distanceTravelled = 0;
                 bullet1.GetComponent<sineWaveInfo>().amplitude = amplitude;
+
+                //if(sineSpeedAcceleration == true)
+                //{
+
+                //}
+
                 bullet1.GetComponent<sineWaveInfo>().speed = speed;
                 bullet1.GetComponent<sineWaveInfo>().compression = compression;
                 angle += increment;
@@ -140,4 +150,6 @@ public class sineSpawner : MonoBehaviour
     {
 
     }
+
+    
 }

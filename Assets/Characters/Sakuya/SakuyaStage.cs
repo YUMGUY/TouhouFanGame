@@ -26,6 +26,8 @@ public class SakuyaStage : MonoBehaviour
     public GameObject pattern2Helper;
     public Animator wineBottle1;
     public Animator wineBottle2;
+    public AudioClip TimeStopIndicator;
+    public AudioSource SakuyaSoundFX;
     public string knifeTag;
 
     [Header("Sakuya Bullet & Animation Variables")]
@@ -207,9 +209,11 @@ public class SakuyaStage : MonoBehaviour
     public IEnumerator SurroundTimeStop(float gapMin, float gapMax, float gapOffset)
     {
         // play sound effect, yield for time of sound effect
+        SakuyaSoundFX.PlayOneShot(TimeStopIndicator);
+        yield return new WaitForSeconds(1.1f);
 
         Color orig = ReimuTarget.GetComponent<SpriteRenderer>().color; // for debugging purposes
-
+        ReimuTarget.GetComponent<Animator>().SetTrigger("Frozen");
         ReimuTarget.GetComponent<ReimuInfo>().canShoot = false;
         ReimuTarget.GetComponent<playerMovement>().playerCanMove = false;
         ReimuTarget.GetComponent<SpriteRenderer>().color = Color.blue;
@@ -300,7 +304,8 @@ public class SakuyaStage : MonoBehaviour
 
         yield return new WaitForSeconds(.3f);
         for (int i = 0; i < circles.Length; ++i)
-        {   
+        {
+            //print("accelerated");
             circles[i].GetComponent<regularCustomBehavior>().willAccel = true;
             pattern2Helper.GetComponent<regularSpawnInfo>().spawnBullet();
             yield return new WaitForSeconds(.1f);

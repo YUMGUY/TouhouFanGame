@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d380e7b945dcbb34c91443ba5e8cb053, type: 3}
+  m_Name: YellowBurst4Shot
+  m_EditorClassIdentifier: 
+  bulletResourceS: {fileID: 0}
+  bulletPoolTag: medYellow
+  hasRandomAngles: 0
+  numScols: 5
+  fireRateSC: 0.35
+  minAngle: -20
+  maxAngle: 20
+  lifeTimeSC: 8
+  willAccelSC: 0
+  bulletSpeedSC: 3
+  dirSC: {x: 1, y: 0}
+  curveSC:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

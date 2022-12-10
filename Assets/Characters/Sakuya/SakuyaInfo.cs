@@ -40,6 +40,7 @@ public class SakuyaInfo : MonoBehaviour
             {
                 currentSakuyaHp -= reimuConnection.reimuDmg;
                 collision.gameObject.SetActive(false);
+                GameManager.instance.IncreaseHunger(1);
             }
         }
        

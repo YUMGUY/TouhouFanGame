@@ -33,8 +33,9 @@ public class specialCustomizationBullets : MonoBehaviour
     }
 
     // helper to access bullet data more easily
-    public SpecialBulletData GetBulletData()
+    public SpecialBulletData GetBulletData() // rn needs at least 1 bullet object inn the array
     {
+        
         return customDataPatterns[indexSC];
     }
     // Update is called once per frame

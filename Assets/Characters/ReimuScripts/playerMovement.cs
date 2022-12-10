@@ -46,17 +46,15 @@ public class playerMovement : MonoBehaviour
         moveY = Input.GetAxisRaw("Vertical");
 
         movement = new Vector2(moveX, moveY).normalized;
-        if (hitbox.activeInHierarchy && outline.activeInHierarchy)
-        {
-            hitbox.SetActive(false);
-            outline.SetActive(false);
-        }
+        //if (hitbox.activeInHierarchy && outline.activeInHierarchy)
+        //{
+         
+        //}
 
         if (Input.GetKey(KeyCode.LeftShift) && playerCanMove)
         {
             playerSpeed = slowSpeed;
-            hitbox.SetActive(true);
-            outline.SetActive(true);
+         
         }
         else if(Input.GetKey(KeyCode.LeftShift) && playerCanMove == false)
         {

@@ -94,7 +94,7 @@ public class Dialogue_Controller : MonoBehaviour
         state = State.TALKING;
 
         Sprite emotionParam = currentConvo.conversations[convoIndex].currentSpriteEmotion;
-        showEmotion(emotionParam);
+        showEmotion(emotionParam, 0);
 
         int charIndex = 0;
 
@@ -153,15 +153,19 @@ public class Dialogue_Controller : MonoBehaviour
 
 
     // in future use in separate script
-    public void showEmotion(Sprite spriteEmotion)
+    public void showEmotion(Sprite spriteEmotion, int speakerNumber) // 1 or 2
     {
-  //      if (currentConvo.conversations[convoIndex].speaker.speakerName == "Alice")
-       // {
+  
             if (spriteEmotion == null)
             {
                 print("no emotion animation will be played");
                 return;
             }
+
+        if(speakerNumber == 1)
+        {
+
+        }
 
     
 
@@ -191,6 +195,8 @@ public class Dialogue_Controller : MonoBehaviour
             case 2:
                 // start conversation after phase 3 ended
                 // move onto next scene
+
+                GameManager.instance.GetComponent<AudioSource>().Pause();
                 SceneManager.LoadScene(1);
                 break;
    
