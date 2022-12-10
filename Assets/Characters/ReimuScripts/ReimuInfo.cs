@@ -25,7 +25,7 @@ public class ReimuInfo : MonoBehaviour
     public AudioClip ReimuPoweredUp;
     public Animator ReimuVisuals;
 
-
+    public bool dmgCoroutine;
 
 
     private void Awake()
@@ -110,7 +110,7 @@ public class ReimuInfo : MonoBehaviour
 
     public void PowerReimuDown()
     {
-        fireRate_Reimu = .1f;
-        fireCooldown = .1f;
+        fireRate_Reimu = .15f;
+        fireCooldown = .15f;
     }
 }

@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typingSpeed: 0.015
   textPanel: {fileID: 103056726}
-  namePanel: {fileID: 0}
+  namePanel: {fileID: 2056491602}
   sakuya_stage: {fileID: 886750599}
   youmu_stage: {fileID: 0}
   TouhouConversations:
@@ -2233,6 +2233,7 @@ Transform:
   - {fileID: 518354385}
   - {fileID: 780342456}
   - {fileID: 1296110174}
+  - {fileID: 1480129015}
   m_Father: {fileID: 2048969450}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2388,6 +2389,7 @@ MonoBehaviour:
   personalSakuyaSpawner: {fileID: 2048969451}
   wineSpawner1: {fileID: 1766121683}
   wineSpawner2: {fileID: 291623227}
+  extraDiff: {fileID: 1480129016}
   spawners:
   - {fileID: 805485755}
   - {fileID: 518354382}
@@ -2991,7 +2993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_Name
-      value: Spit Roast Knives Rotator
+      value: Spit Roast Knives Helper
       objectReference: {fileID: 0}
     - target: {fileID: 170791794600279766, guid: c1478215878dd9a4db21eddcda393485, type: 3}
       propertyPath: m_IsActive
@@ -3202,6 +3204,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430953033}
   m_CullTransparentMesh: 1
+--- !u!1 &1480129014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480129015}
+  - component: {fileID: 1480129016}
+  m_Layer: 0
+  m_Name: Extra Difficulty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480129015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480129014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 886750595}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480129016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480129014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9192bdfac62676740868ac18e11bba7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletR: {fileID: 8660086008319136251, guid: 26effb1d89b3e55499e3ac896c19c4f1, type: 3}
+  bulletPoolR: {fileID: 2007048437}
+  numCol: 15
+  newNumCol: 15
+  spawnSpeed: 2
+  lifeTimeR: 8
+  dirSpawn: {x: 1, y: 0}
+  spawnRateR: 0
+  willSpawnAuto: 0
+  spawnRateTimerR: 0
+  randomAngles: 0
+  minRotationR: 0
+  maxRotationR: 360
+  rotationsR: []
+  spawnerRotating: 0
+  rotateSpeed: 0
+  Reimu: {fileID: 0}
+  makeHeart: 0
+  spawnReverse: 0
+  accelBullets: 0
+  numberOfCustomBullets: 0
+  accelerationCurveR:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maidPosIndex: 0
 --- !u!1 &1542282638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8410929286893041305, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
@@ -3250,6 +3324,7 @@ Transform:
   - {fileID: 16004576}
   - {fileID: 2033214374}
   - {fileID: 1279967432}
+  - {fileID: 2007048436}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3963,7 +4038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41e3911347b89f42b0e1130bab32381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReimuManager: {fileID: 0}
+  ReimuManager: {fileID: 419129741}
   timeScale: 0
   currentHungerPoints: 0
   maxHungerPoints: 10
@@ -4003,7 +4078,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   hungerPointsDisplay: {fileID: 1430953035}
   livesDisplay: {fileID: 198918546}
-  d_control: {fileID: 0}
+  d_control: {fileID: 4683267}
   startedSakuya: 0
   startedYoumu: 0
   YoumuTheme: {fileID: 8300000, guid: 8a11aaaf2f63d594f93346f1349e130b, type: 3}
@@ -4103,6 +4178,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &2007048435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1551289320}
+    m_Modifications:
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041304, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 8660086008319136251, guid: 26effb1d89b3e55499e3ac896c19c4f1, type: 3}
+    - target: {fileID: 8410929286893041305, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_Name
+      value: Regular Blue Small Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410929286893041305, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+--- !u!4 &2007048436 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8410929286893041287, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+  m_PrefabInstance: {fileID: 2007048435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2007048437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8410929286893041305, guid: 6061bd417dee14f41a4f05bb63e5fee0, type: 3}
+  m_PrefabInstance: {fileID: 2007048435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2033214373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4655,7 +4805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2056491601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4947,7 +5097,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7499804058874376749, guid: 0f543da7428f2714baf54c75f70cedb7, type: 3}
       propertyPath: Priority
-      value: 164
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2190254896303555636, guid: 0f543da7428f2714baf54c75f70cedb7, type: 3}
       propertyPath: m_Enabled
@@ -4988,6 +5138,10 @@ PrefabInstance:
     - target: {fileID: 5870185953741623501, guid: 0f543da7428f2714baf54c75f70cedb7, type: 3}
       propertyPath: normalSpeed
       value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870185953741623502, guid: 0f543da7428f2714baf54c75f70cedb7, type: 3}
+      propertyPath: reimuDmg
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5870185953741623502, guid: 0f543da7428f2714baf54c75f70cedb7, type: 3}
       propertyPath: ReimuPoweredUp

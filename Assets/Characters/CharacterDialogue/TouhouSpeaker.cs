@@ -7,4 +7,5 @@ public class TouhouSpeaker : ScriptableObject
 {
     public string speakerName;
     public Color nameColor;
+    public int characterLabel;
 }

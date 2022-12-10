@@ -54,7 +54,7 @@ public class specialCustomizationBullets : MonoBehaviour
         }
         if(rotationsSC.Length != GetBulletData().numScols)
         {
-            print("custom rotation size changed");
+           // print("custom rotation size changed");
             rotationsSC = new float[GetBulletData().numScols];
         }
 

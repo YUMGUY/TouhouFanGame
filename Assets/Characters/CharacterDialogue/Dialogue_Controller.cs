@@ -89,12 +89,15 @@ public class Dialogue_Controller : MonoBehaviour
 
     private IEnumerator typeText(string text)
     {
-        
+        namePanel.text = currentConvo.conversations[convoIndex].character.name;
+        namePanel.color = currentConvo.conversations[convoIndex].character.nameColor;
         textPanel.text = "";
+
         state = State.TALKING;
 
+        int label = currentConvo.conversations[convoIndex].character.characterLabel;
         Sprite emotionParam = currentConvo.conversations[convoIndex].currentSpriteEmotion;
-        showEmotion(emotionParam, 0);
+        showEmotion(emotionParam, label);
 
         int charIndex = 0;
 
@@ -131,17 +134,21 @@ public class Dialogue_Controller : MonoBehaviour
         {
             print("end of dialogue for now");
             // temporary disappearance of dialogue box and characters
-            dialoguePanel.SetActive(false);
-            character1.SetActive(false);
-            character2.SetActive(false);
+            if(dialoguePanel.activeInHierarchy)
+            {
+                dialoguePanel.SetActive(false);
+                character1.SetActive(false);
+                character2.SetActive(false);
+            }
+          
 
             convoStarted = false;
 
-            if(SceneManager.GetActiveScene().buildIndex == 0)
+            if(SceneManager.GetActiveScene().buildIndex == 1)
             {
                 StartSakuyaPhase(TouhouConversationIndex);
             }
-            else if(SceneManager.GetActiveScene().buildIndex == 1)
+            else if(SceneManager.GetActiveScene().buildIndex == 2)
             {
                 YoumuPhaseSelector(TouhouConversationIndex);
             }
@@ -164,7 +171,17 @@ public class Dialogue_Controller : MonoBehaviour
 
         if(speakerNumber == 1)
         {
+            character1.GetComponent<Image>().sprite = spriteEmotion;
+        }
+        else if(speakerNumber == 2)
+        {
+            character2.GetComponent<Image>().sprite = spriteEmotion;
+        }
 
+
+        else
+        {
+            print("no emotion sprite will be displayed");
         }
 
     
@@ -190,6 +207,7 @@ public class Dialogue_Controller : MonoBehaviour
                 sakuya_stage.StartPhase1();
                 break;
             case 1:
+                print("started");
                StartCoroutine( sakuya_stage.StartPhase2Coroutine() );
                 break;
             case 2:
@@ -197,7 +215,7 @@ public class Dialogue_Controller : MonoBehaviour
                 // move onto next scene
 
                 GameManager.instance.GetComponent<AudioSource>().Pause();
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 break;
    
         }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501c52fc15d01de40bf7697aef3ceef6, type: 3}
   m_Name: Sakuya
   m_EditorClassIdentifier: 
-  speakerName: 
-  nameColor: {r: 0, g: 0, b: 0, a: 0}
+  speakerName: Sakuya
+  nameColor: {r: 0, g: 0.4083376, b: 1, a: 1}
+  characterLabel: 2

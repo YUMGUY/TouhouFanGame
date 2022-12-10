@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 501c52fc15d01de40bf7697aef3ceef6, type: 3}
   m_Name: Youmu
   m_EditorClassIdentifier: 
-  speakerName: 
-  nameColor: {r: 0, g: 0, b: 0, a: 0}
+  speakerName: Youmu
+  nameColor: {r: 0.009618218, g: 0.6698113, b: 0, a: 1}
+  characterLabel: 2

@@ -32,18 +32,30 @@ public class GameManager : MonoBehaviour
     public AudioClip YoumuTheme;
     private void Awake()
     {
-        if(GameManager.instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+
+        instance = this;
+        //if(GameManager.instance != null)
+        //{
+            
+        //    Destroy(this.gameObject);
+        //}
+        //else
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(instance);
+        //  //  Destroy(this.gameObject);
+        //}
 
         hungerPointsDisplay.text = currentHungerPoints.ToString("D2") + "/" + maxHungerPoints.ToString("D2");
         ReimuManager = GameObject.FindGameObjectWithTag("Player");
+        d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
+    }
+
+    private void OnEnable()
+    {
+        hungerPointsDisplay.text = currentHungerPoints.ToString("D2") + "/" + maxHungerPoints.ToString("D2");
+        ReimuManager = GameObject.FindGameObjectWithTag("Player");
+        d_control = GameObject.FindGameObjectWithTag("DialogueCanvas").GetComponent<Dialogue_Controller>();
     }
 
     // Start is called before the first frame update
@@ -60,11 +72,6 @@ public class GameManager : MonoBehaviour
 
         //}
 
-
-        //if (d_control == null)
-        //{
-        //    Debug.Log("Can't find Dialogue Canvas");
-        //}
 
         
         
@@ -114,15 +121,15 @@ public class GameManager : MonoBehaviour
             }
             
         }
-        if (SceneManager.GetActiveScene().buildIndex == 0 && startedSakuya == false)
+        if (SceneManager.GetActiveScene().buildIndex == 1 && startedSakuya == false)
         {
             // start it up
             // start coroutine
-         //   d_control.startConvo();
+            d_control.startConvo();
             startedSakuya = true;
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 1 && startedYoumu == false)
+        if (SceneManager.GetActiveScene().buildIndex == 2 && startedYoumu == false)
         {
             // start it up
             // start coroutine

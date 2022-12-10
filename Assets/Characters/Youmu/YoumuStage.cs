@@ -8,6 +8,7 @@ public class YoumuStage : MonoBehaviour
     [Header("Youmu General Variables")]
     public YoumuInfo Youmu_;
     public GameObject ReimuStage2;
+    public AudioClip YoumuStageTheme;
 
     [Header("Phase 1 Variables")]
     public sineSpawner[] waveMotion;
@@ -70,6 +71,10 @@ public class YoumuStage : MonoBehaviour
         else if (Youmu_.currentYoumuHp <= 0 && Phase2YoumuFinished == false && Phase1YoumuFinished == true) // finish phase 2
         {
             print("finished phase 2");
+            foreach(regularSpawnInfo side in Sides)
+            {
+                side.gameObject.SetActive(false);
+            }
             GameManager.instance.DisableAllBullets();
             StopCoroutine(youmuBattle);
             Youmu_.currentYoumuHp = .1f;
@@ -97,8 +102,9 @@ public class YoumuStage : MonoBehaviour
     public void StartYoumuPhase1()
     {
         // play audio
-        GameManager.instance.GetComponent<AudioSource>().clip = GameManager.instance.YoumuTheme; // redundant
+        GameManager.instance.GetComponent<AudioSource>().clip = YoumuStageTheme; // redundant
         GameManager.instance.GetComponent<AudioSource>().Play();
+        GameManager.instance.GetComponent<AudioSource>().loop = true; 
         youmuBattle = StartCoroutine(YoumuPhase1());
     }
     public void StartYoumuPhase2()

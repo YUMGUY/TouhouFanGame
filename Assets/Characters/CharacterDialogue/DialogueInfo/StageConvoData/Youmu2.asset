@@ -13,9 +13,19 @@ MonoBehaviour:
   m_Name: Youmu2
   m_EditorClassIdentifier: 
   conversations:
-  - convoText: so annoying
-    currentSpriteEmotion: {fileID: 0}
+  - convoText: How are you eating my attacks?!
+    currentSpriteEmotion: {fileID: 21300000, guid: b2c03c83ddaad674899203d2a3ed36cb, type: 3}
+    character: {fileID: 11400000, guid: 144bb3e9d839fea418392fe3bd77afff, type: 2}
     currentAction: 0
-  - convoText: taste this
-    currentSpriteEmotion: {fileID: 0}
+  - convoText: I joined some eating competitions and got some pocket change.
+    currentSpriteEmotion: {fileID: 21300000, guid: 333d7f6f8d3351c4dba01dc64d552fbb, type: 3}
+    character: {fileID: 11400000, guid: 0e0923c580fff6f49b8f826f91ee004f, type: 2}
+    currentAction: 0
+  - convoText: Life is tough as a shrine maiden. I'm so unappreciated.
+    currentSpriteEmotion: {fileID: 21300000, guid: 8710037f6ff5ab54c8b2a32dcc68b813, type: 3}
+    character: {fileID: 11400000, guid: 0e0923c580fff6f49b8f826f91ee004f, type: 2}
+    currentAction: 0
+  - convoText: Then you'll appreciate what I'm serving up.
+    currentSpriteEmotion: {fileID: 21300000, guid: 46440fd15e63af247bcf8f32ccaf4dae, type: 3}
+    character: {fileID: 11400000, guid: 144bb3e9d839fea418392fe3bd77afff, type: 2}
     currentAction: 0

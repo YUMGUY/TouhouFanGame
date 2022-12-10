@@ -21,6 +21,9 @@ public class SakuyaStage : MonoBehaviour
     public specialCustomizationBullets wineSpawner1;
     public specialCustomizationBullets wineSpawner2;
 
+    // phase 3
+    public regularSpawnInfo extraDiff;
+
     public GameObject[] spawners;
     public GameObject pattern2Spawner;
     public GameObject pattern2Helper;
@@ -538,10 +541,12 @@ public class SakuyaStage : MonoBehaviour
             wineBottle1.SetBool("fling", true);
             wineBottle2.SetBool("fling", true);
             // fling wine bottles, 2.997 seconds long
-
-
-            print("reset");
-            yield return new WaitForSeconds(4f); // 4 - 2.997
+            pattern2Helper.GetComponent<regularSpawnInfo>().spawnBullet();
+            pattern2Helper.GetComponent<regularSpawnInfo>().spawnBullet();
+            yield return new WaitForSeconds(1f);
+            extraDiff.spawnBullet();
+            //print("reset");
+            yield return new WaitForSeconds(2.8f); // 4 - 2.997
             yield return null;
         }
     }
