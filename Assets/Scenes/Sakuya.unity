@@ -2383,7 +2383,7 @@ MonoBehaviour:
   phase2: 1
   phase3: 1
   sakuyaInfoSource: {fileID: 2048969453}
-  BattleStageMusic: {fileID: 8300000, guid: c55022d91683d8a41bed9beaf51e7ef4, type: 3}
+  BattleStageMusic: {fileID: 8300000, guid: b65e7b8ddb56fba48b2094a187dd8ec0, type: 3}
   Sakuya_: {fileID: 2048969448}
   Sakuya_Info: {fileID: 2048969453}
   personalSakuyaSpawner: {fileID: 2048969451}
@@ -4710,7 +4710,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 131
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

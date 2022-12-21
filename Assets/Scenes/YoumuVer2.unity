@@ -368,15 +368,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.104248226, g: 0.26415092, b: 0.095941596, a: 0.9647059}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ec308ab20730cda44a1ff493f733cae4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3893,7 +3893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Youmu_: {fileID: 1824012825}
   ReimuStage2: {fileID: 407428640}
-  YoumuStageTheme: {fileID: 8300000, guid: 8a11aaaf2f63d594f93346f1349e130b, type: 3}
+  YoumuStageTheme: {fileID: 8300000, guid: 9f6899bbd61e72e4ebb9e6bdfca66958, type: 3}
   waveMotion:
   - {fileID: 2033490817}
   - {fileID: 1737348168}
