@@ -13,6 +13,10 @@ public class sineWaveInfo : MonoBehaviour
     public float speed;
     public float lifeTime;
 
+    public bool willSineSpeedAccel;
+    public AnimationCurve sineBulletCurve;
+    public float timerSCurve;
+
     [SerializeField]
     private float delta;
     private Vector2 sineVector;
@@ -37,9 +41,10 @@ public class sineWaveInfo : MonoBehaviour
         }
         // make sure to reset distanceTravelled
         delta = Time.deltaTime;
+        // add acceleration later
         distanceTravelled += speed * delta;
+       
         sineVector = new Vector2(distanceTravelled, amplitude * Mathf.Sin(compression * distanceTravelled));
-
         // to be able to rotate the bullet, can either pass in the parent's euler angles or provide euler angles by itself
         sineVector = Quaternion.Euler(transform.eulerAngles) * sineVector;
 

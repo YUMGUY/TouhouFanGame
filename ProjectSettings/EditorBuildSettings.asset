@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 843d452af11f1fe4b930282f12fa7097
+  - enabled: 1
     path: Assets/Scenes/Sakuya.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/YoumuVer2.unity
+    guid: 980319d4aafc3ec418280d26107f46cb
   m_configObjects: {}

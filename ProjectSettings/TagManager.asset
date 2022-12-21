@@ -6,6 +6,22 @@ TagManager:
   tags:
   - sineBullet1
   - bulletPool
+  - knife
+  - hungerUI
+  - bsphere_pool
+  - sineBulletPool
+  - DialogueCanvas
+  - regularBullet
+  - regularBlue
+  - reimu_Bullet
+  - bigBlueSphere
+  - sakuyaShard_p
+  - knifePool
+  - medBlue
+  - ReimuBulletPool
+  - HungerPointBullet
+  - medCyan
+  - medYellow
   layers:
   - Default
   - TransparentFX
